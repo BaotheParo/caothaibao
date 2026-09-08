@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Cao Thai Bao | Backend Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Cao Thai Bao - Backend Developer specializing in resilient backend systems, high-throughput APIs, and AI integrations with Spring Boot and FastAPI." />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      "darkMode": "class",
+      "theme": {
+        "extend": {
+          "colors": {
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#434843",
+            "secondary": "#4d644e",
+            "secondary-container": "#cfeace",
+            "secondary-fixed-dim": "#b3cdb2",
+            "surface-tint": "#556156",
+            "surface-container-high": "#e7e9e6",
+            "primary": "#07110a",
+            "tertiary-fixed": "#e7dff2",
+            "tertiary-fixed-dim": "#cac4d5",
+            "on-primary-container": "#828f83",
+            "outline": "#747873",
+            "surface-container": "#eceeeb",
+            "surface": "#f8faf7",
+            "surface-container-highest": "#e1e3e0",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2e312f",
+            "secondary-fixed": "#cfeace",
+            "primary-fixed": "#d9e6d8",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#536a54",
+            "on-background": "#191c1b",
+            "inverse-primary": "#bdcabc",
+            "outline-variant": "#c4c8c1",
+            "on-secondary-fixed": "#0a200f",
+            "surface-container-low": "#f2f4f1",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#bdcabc",
+            "on-primary-fixed-variant": "#3e4a3f",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8faf7",
+            "surface-bright": "#f8faf7",
+            "on-secondary-fixed-variant": "#364c38",
+            "surface-dim": "#d8dbd8",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#494553",
+            "tertiary": "#110e1a",
+            "on-tertiary-fixed": "#1d1a26",
+            "surface-variant": "#e1e3e0",
+            "tertiary-container": "#262330",
+            "on-primary-fixed": "#131e15",
+            "primary-container": "#1c271e",
+            "on-surface": "#191c1b",
+            "inverse-on-surface": "#eff1ee",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#8f899a",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "space-2xl": "3rem",
+            "space-xl": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-3xl": "4.5rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "code-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface relative selection:bg-secondary-container selection:text-on-secondary-fixed">
+  <!-- Decorative Ambient Aurora Background Blur -->
+  <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-secondary-fixed-dim/30 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-28 w-[420px] h-[420px] rounded-full bg-tertiary-fixed/30 blur-[130px]"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-[360px] h-[360px] rounded-full bg-secondary-container/25 blur-[120px]"></div>
+    <div class="absolute -bottom-24 right-1/4 w-96 h-96 rounded-full bg-secondary-fixed/20 blur-[110px]"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 inset-x-0 z-50 pt-space-md">
+    <div class="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="h-full bg-surface/85 backdrop-blur-2xl rounded-full px-space-md lg:px-space-lg flex items-center justify-between shadow-[0_8px_30px_rgba(28,39,30,0.06)] border border-outline-variant/30">
+        <!-- Logo & Status -->
+        <div class="flex items-center gap-space-sm">
+          <a href="#" class="flex items-center gap-space-xs group">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+            </span>
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold group-hover:text-secondary transition-colors">Cao Thai Bao</span>
+          </a>
+          <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/60 text-secondary font-label-sm text-label-sm font-medium" data-en="Backend Developer" data-vi="Chuyên viên Backend">Backend Developer</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-space-xs p-1 bg-surface-container-low/70 rounded-full border border-outline-variant/30">
+          <a aria-current="page" class="px-space-md py-1.5 rounded-full transition-all bg-secondary-container text-on-secondary-fixed font-semibold text-label-md" data-en="About Me" data-vi="Giới thiệu" href="#">About Me</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Projects" data-vi="Dự án" href="../alex_rivera_projects_case_studies/projects.html">Projects</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Skills" data-vi="Kỹ năng" href="../alex_rivera_skills_competencies_matrix/skills.html">Skills</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Resume" data-vi="Hồ sơ" href="../alex_rivera_resume_curriculum_vitae/code.html">Resume</a>
+        </nav>
+
+        <!-- Language Toggle & Contact CTA -->
+        <div class="flex items-center gap-space-xs sm:gap-space-sm">
+          <!-- Sleek Floating Glass Pill Language Toggle -->
+          <div class="flex items-center bg-surface-container-low/80 p-0.5 rounded-full border border-outline-variant/50 shadow-inner" id="lang-toggle-group">
+            <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm">EN</button>
+            <button id="lang-btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface">VI</button>
+          </div>
+
+          <a class="inline-flex items-center justify-center px-space-md py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_4px_16px_rgba(28,39,30,0.18)] hover:bg-primary transition-all hover:scale-[1.02]" data-en="Contact" data-vi="Liên hệ" href="mailto:tanthaibao123@gmail.com">Contact</a>
+          <img alt="Cao Thai Bao" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AEtjO1WdQPiqPV5P1xtOeDBUViPVDrgMjEUk_bCogkKBv_qziDZVZ0IHO4v3JkzBzxZW1lWnazGzYblJxxFQxQ4XNDSE4VqlRrL7xD8Uy9QGJJ2ze3ILZVAcr0Ws2sUEhQyVkegMXHdlPZ8nOxgyXxZxSTC0_XQKC526AKJFuE7FdQbkcpH6rkmO_PpJHyC9dxm75LYnvuYYmaiTL1zbSu0kG2oYUFrLmklB638_ppeVA4z4PKAsGeqWRrm4ci6q"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-16 min-h-screen">
+    <div class="flex flex-col w-full">
+      <!-- SECTION 1: HERO (TWO-COLUMN BENTO EXECUTIVE INTRO) -->
+      <section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop w-full pt-space-lg lg:pt-space-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+          <!-- Left Column (approx 60% -> 7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+            <!-- Recruiter Status Badge -->
+            <div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm border border-outline-variant/30">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+              </span>
+              <span class="font-label-md text-label-md text-on-surface" data-en="Available for Backend Developer / Software Engineer roles" data-vi="Sẵn sàng cho vị trí Backend Developer / Kỹ sư Phần mềm">Available for Backend Developer / Software Engineer roles</span>
+            </div>
+
+            <!-- Big Clean Headline -->
+            <h1 class="font-display-hero text-display-hero text-primary tracking-tight max-w-2xl" data-en="Engineering resilient backend systems, high-throughput APIs & AI workflows." data-vi="Xây dựng hệ thống Backend chịu tải, tối ưu API & tích hợp AI thông minh.">
+              Engineering resilient backend systems, high-throughput APIs & AI workflows.
+            </h1>
+
+            <!-- Concise Bio -->
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed" data-en="Final-year Software Engineering student at SaiGon University with enterprise experience architecting asynchronous microservices, optimizing database concurrency, and integrating multi-modal AI models using Spring Boot and FastAPI." data-vi="Sinh viên năm cuối ngành Kỹ thuật Phần mềm ĐH Sài Gòn với kinh nghiệm thực tế thiết kế microservices bất đồng bộ, tối ưu hóa concurrency cơ sở dữ liệu và tích hợp mô hình AI đa phương thức với Spring Boot và FastAPI.">
+              Final-year Software Engineering student at SaiGon University with enterprise experience architecting asynchronous microservices, optimizing database concurrency, and integrating multi-modal AI models using Spring Boot and FastAPI.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+              <a class="inline-flex items-center gap-space-xs px-6 py-3.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all hover:scale-[1.015]" href="#featured-projects">
+                <span data-en="Explore Featured Work" data-vi="Xem dự án nổi bật">Explore Featured Work</span>
+                <span class="material-symbols-outlined text-[18px]">south</span>
+              </a>
+              <a class="inline-flex items-center gap-space-xs px-6 py-3.5 rounded-full bg-surface-container-lowest/90 text-primary font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-all border border-outline-variant/30" href="https://github.com/BaotheParo" rel="noopener noreferrer" target="_blank">
+                <svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+                  <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+                </svg>
+                <span>GitHub Profile</span>
+                <span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_outward</span>
+              </a>
+            </div>
+
+            <!-- Stat Chips Quick Info Bar -->
+            <div class="flex flex-wrap items-center gap-space-xs pt-space-sm">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-primary font-code-sm text-code-sm shadow-sm border border-outline-variant/30">
+                <span class="material-symbols-outlined text-[15px] text-secondary">school</span>
+                <span data-en="SaiGon University '26" data-vi="Đại học Sài Gòn '26">SaiGon University '26</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container/50 text-on-secondary-fixed font-code-sm text-code-sm shadow-sm border border-secondary-fixed-dim/40">
+                <span class="material-symbols-outlined text-[15px] text-secondary">terminal</span>
+                <span>Java 21 • Spring Boot 3.x • FastAPI • Redis</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-code-sm text-code-sm shadow-sm border border-outline-variant/30">
+                <span class="material-symbols-outlined text-[15px] text-secondary">translate</span>
+                <span data-en="IELTS 6.0 (Working Fluency)" data-vi="IELTS 6.0 (Giao tiếp làm việc)">IELTS 6.0 (Working Fluency)</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-code-sm text-code-sm shadow-sm border border-outline-variant/30">
+                <span class="material-symbols-outlined text-[15px] text-on-surface-variant">location_on</span>
+                <span data-en="Ho Chi Minh City, Vietnam" data-vi="TP. Hồ Chí Minh">Ho Chi Minh City, Vietnam</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (approx 40% -> 5 cols) Headshot Bento Card -->
+          <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+            <!-- Ambient Decorative Aura Glow -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-secondary-fixed-dim/40 via-tertiary-fixed/30 to-secondary-container/40 rounded-[36px] blur-2xl -z-10"></div>
+            <div class="relative w-full max-w-[420px] aspect-square rounded-[28px] overflow-hidden bg-surface-container-lowest/80 backdrop-blur-xl p-3 shadow-xl border border-outline-variant/30">
+              <!-- Portrait Image -->
+              <img alt="Cao Thai Bao - Backend Developer" class="w-full h-full object-cover rounded-[22px]" src="https://lh3.googleusercontent.com/aida/AEtjO1WdQPiqPV5P1xtOeDBUViPVDrgMjEUk_bCogkKBv_qziDZVZ0IHO4v3JkzBzxZW1lWnazGzYblJxxFQxQ4XNDSE4VqlRrL7xD8Uy9QGJJ2ze3ILZVAcr0Ws2sUEhQyVkegMXHdlPZ8nOxgyXxZxSTC0_XQKC526AKJFuE7FdQbkcpH6rkmO_PpJHyC9dxm75LYnvuYYmaiTL1zbSu0kG2oYUFrLmklB638_ppeVA4z4PKAsGeqWRrm4ci6q"/>
+              <!-- Floating Pill Badge -->
+              <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between px-4 py-2.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-lg border border-outline-variant/30">
+                <div class="flex items-center gap-2">
+                  <span class="font-headline-sm text-headline-sm text-primary" data-en="Hi, I'm Thai Bao 👋" data-vi="Xin chào, mình là Thái Bảo 👋">Hi, I'm Thai Bao 👋</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-on-secondary-fixed bg-secondary-container px-2.5 py-0.5 rounded-full font-semibold">Backend</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: FEATURED SYSTEMS & DEPLOYMENTS (BENTO GRID) -->
+      <section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop w-full pt-space-3xl" id="featured-projects">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md mb-space-lg">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold" data-en="Flagship Work" data-vi="Dự án Tiêu biểu">Flagship Work</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-1" data-en="Featured Systems & Deployments" data-vi="Hệ thống & Triển khai Nổi bật">Featured Systems & Deployments</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl" data-en="Standout production-ready projects built with end-to-end ownership, robust architectures, and measurable outcomes." data-vi="Các dự án thực tế với kiến trúc tối ưu, khả năng chịu tải cao và kết quả đo lường cụ thể.">
+              Standout production-ready projects built with end-to-end ownership, robust architectures, and measurable outcomes.
+            </p>
+          </div>
+          <a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-secondary hover:text-primary transition-colors group" data-path="projects" href="../alex_rivera_projects_case_studies/code.html">
+            <span data-en="View all projects" data-vi="Xem tất cả dự án">View all projects</span>
+            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Bento Grid Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+          <!-- Project Card 1: ENGONOW Automated Evaluation Engine (Col span 7) -->
+          <div class="lg:col-span-7 flex flex-col justify-between rounded-[26px] bg-surface-container-lowest/80 backdrop-blur-xl p-space-xl shadow-lg hover:-translate-y-1 transition-all duration-300 border border-outline-variant/30">
+            <div>
+              <!-- Header and Badge -->
+              <div class="flex items-center justify-between gap-space-sm mb-space-md">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant" data-en="ENGONOW EdTech • Enterprise Experience" data-vi="ENGONOW EdTech • Kinh nghiệm Doanh nghiệp">ENGONOW EdTech • Enterprise Experience</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-container/60 text-on-secondary-fixed font-medium" data-en="Enterprise Microservices • Real-Time SSE" data-vi="Microservices Doanh nghiệp • Real-Time SSE">Enterprise Microservices • Real-Time SSE</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary tracking-tight">
+                IELTS Automated Evaluation Engine
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed" data-en="Engineered core microservices decoupling essay and speech evaluation pipelines via asynchronous background workers. Delivered real-time scoring streams and integrated Google Gemini 2.5 Flash & Groq Whisper with circuit-breaker resilience." data-vi="Phát triển microservices cốt lõi tách biệt luồng phân tích bài luận và phát âm qua background workers. Truyền trạng thái chấm điểm thời gian thực và tích hợp Google Gemini 2.5 Flash & Groq Whisper với cơ chế circuit breaker dự phòng.">
+                Engineered core microservices decoupling essay and speech evaluation pipelines via asynchronous background workers. Delivered real-time scoring streams and integrated Google Gemini 2.5 Flash & Groq Whisper with circuit-breaker resilience.
+              </p>
+
+              <!-- Metric Highlight Tiles -->
+              <div class="grid grid-cols-3 gap-space-sm my-space-lg">
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-primary font-bold">-85%</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Polling Traffic (Redis SSE)" data-vi="Lượng Polling (Redis SSE)">Polling Traffic (Redis SSE)</span>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-secondary font-bold">100%</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Score Drift Eliminated" data-vi="Chuẩn hóa Cambridge">Score Drift Eliminated</span>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-primary font-bold text-[20px] sm:text-[24px]">Multi-Modal</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Gemini 2.5 + Groq Whisper" data-vi="Gemini 2.5 + Whisper">Gemini 2.5 + Groq Whisper</span>
+                </div>
+              </div>
+
+              <!-- Tech Pills -->
+              <div class="flex flex-wrap gap-1.5 mb-space-md">
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Java 21</span>
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Spring Boot 3.x</span>
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">FastAPI</span>
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Redis Pub/Sub</span>
+                <span class="px-3 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">Docker</span>
+                <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">PostgreSQL</span>
+              </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="flex items-center gap-space-md pt-space-sm">
+              <span class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+                <span data-en="Internship Project" data-vi="Dự án Thực tập">Internship Project</span>
+              </span>
+              <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="../alex_rivera_projects_case_studies/code.html">
+                <span class="material-symbols-outlined text-[18px]">read_more</span>
+                <span data-en="Case Study Details" data-vi="Chi tiết dự án">Case Study Details</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Card 2: Street Voice Backend Platform (Col span 5) -->
+          <div class="lg:col-span-5 flex flex-col justify-between rounded-[26px] bg-surface-container-lowest/80 backdrop-blur-xl p-space-xl shadow-lg hover:-translate-y-1 transition-all duration-300 border border-outline-variant/30">
+            <div>
+              <!-- Header and Badge -->
+              <div class="flex items-center justify-between gap-space-sm mb-space-md">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-on-secondary-container"></span>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant" data-en="High-Throughput System" data-vi="Hệ thống Tải cao">High-Throughput System</span>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed font-medium" data-en="Concurrency & Async Workers" data-vi="Xử lý Bất đồng bộ & Đa luồng">Concurrency & Async Workers</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary tracking-tight">
+                Street Voice Backend Platform
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed" data-en="Modular REST API with stateless JWT security. Offloaded heavy text transformations via Spring @Async and engineered a thread-safe Request Coalescing layer using ConcurrentHashMap and CompletableFuture." data-vi="Hệ thống REST API phân tầng bảo mật JWT. Chuyển đổi tác vụ nặng sang worker threads qua Spring @Async và thiết kế tầng gom request (Request Coalescing) chống nghẽn luồng.">
+                Modular REST API with stateless JWT security. Offloaded heavy text transformations via Spring @Async and engineered a thread-safe Request Coalescing layer using ConcurrentHashMap and CompletableFuture.
+              </p>
+
+              <!-- Metric Highlight Tiles -->
+              <div class="grid grid-cols-3 gap-space-xs sm:gap-space-sm my-space-lg">
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-primary font-bold">+300%</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Throughput" data-vi="Thông lượng">Throughput</span>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-secondary font-bold">12ms</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Median Latency" data-vi="Độ trễ trung vị">Median Latency</span>
+                </div>
+                <div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col border border-outline-variant/20">
+                  <span class="font-headline-md text-headline-md text-primary font-bold">-40%</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" data-en="Redundant Req" data-vi="Request thừa">Redundant Req</span>
+                </div>
+              </div>
+
+              <!-- Tech Pills -->
+              <div class="flex flex-wrap gap-1.5 mb-space-md">
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Spring Boot 3.x</span>
+                <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Java 21</span>
+                <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Python</span>
+                <span class="px-3 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">PostgreSQL</span>
+                <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Docker</span>
+              </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="flex items-center gap-space-md pt-space-sm">
+              <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-secondary transition-colors" href="https://github.com/doanhdai/street-voice-backend.git" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined text-[18px]">terminal</span>
+                <span data-en="GitHub Repository" data-vi="Mã nguồn GitHub">GitHub Repository</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: CORE STACK & ENGINEERING COMPETENCIES -->
+      <section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop w-full pt-space-3xl">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md mb-space-lg">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold" data-en="Capabilities" data-vi="Năng lực Chuyên môn">Capabilities</span>
+            <h2 class="font-headline-lg text-headline-lg text-primary mt-1" data-en="Stack & Engineering Competencies" data-vi="Ngăn xếp Công nghệ & Chuyên môn Kỹ thuật">Stack & Engineering Competencies</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl" data-en="Core toolkits cultivated through rigorous coursework, enterprise internship, and hands-on system deployments." data-vi="Bộ công cụ kỹ thuật vững chắc được tôi luyện qua chương trình đại học, thực tập doanh nghiệp và triển khai thực tế.">
+              Core toolkits cultivated through rigorous coursework, enterprise internship, and hands-on system deployments.
+            </p>
+          </div>
+          <a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-secondary hover:text-primary transition-colors group" data-path="skills" href="../alex_rivera_skills_competencies_matrix/code.html">
+            <span data-en="Explore in-depth skills matrix" data-vi="Xem chi tiết ma trận kỹ năng">Explore in-depth skills matrix</span>
+            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- 3 Bento Columns for Stacks -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+          <!-- Card 1: Backend & Systems Architecture -->
+          <div class="rounded-[26px] bg-surface-container-lowest/80 backdrop-blur-xl p-space-xl shadow-md hover:-translate-y-1 transition-all border border-outline-variant/30 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-2xl bg-secondary-container/70 flex items-center justify-center text-secondary mb-space-md">
+                <span class="material-symbols-outlined text-[22px]">dns</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-space-xs" data-en="Backend & Systems Architecture" data-vi="Kiến trúc Backend & Hệ thống">Backend & Systems Architecture</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed" data-en="Designing modular RESTful APIs, asynchronous pipelines, and fault-tolerant microservices." data-vi="Thiết kế RESTful API chuẩn mực, kiến trúc bất đồng bộ và microservices bền bỉ.">
+                Designing modular RESTful APIs, asynchronous pipelines, and fault-tolerant microservices.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Java (17/21)</span>
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Spring Boot 3.x</span>
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Spring Data JPA</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Spring Security</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">FastAPI</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Pydantic v2</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Databases, Caching & Concurrency -->
+          <div class="rounded-[26px] bg-surface-container-lowest/80 backdrop-blur-xl p-space-xl shadow-md hover:-translate-y-1 transition-all border border-outline-variant/30 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container mb-space-md">
+                <span class="material-symbols-outlined text-[22px]">database</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-space-xs" data-en="Databases, Caching & Concurrency" data-vi="Cơ sở Dữ liệu, Cache & Concurrency">Databases, Caching & Concurrency</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed" data-en="Relational data modeling, concurrency control, in-memory caching, and connection pool optimization." data-vi="Thiết kế CSDL quan hệ, kiểm soát tranh chấp concurrency, bộ nhớ đệm cache và tối ưu connection pool.">
+                Relational data modeling, concurrency control, in-memory caching, and connection pool optimization.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">PostgreSQL (JSONB)</span>
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">MySQL</span>
+              <span class="px-3 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">Redis (Pub/Sub & Cache)</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">HikariCP</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Concurrency Handling</span>
+            </div>
+          </div>
+
+          <!-- Card 3: DevOps, Testing & Core CS -->
+          <div class="rounded-[26px] bg-surface-container-lowest/80 backdrop-blur-xl p-space-xl shadow-md hover:-translate-y-1 transition-all border border-outline-variant/30 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+                <span class="material-symbols-outlined text-[22px]">developer_board</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-space-xs" data-en="DevOps, Testing & Core CS" data-vi="DevOps, Kiểm thử & Khoa học CS">DevOps, Testing & Core CS</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed" data-en="Automated CI/CD pipelines, containerization, strict API contracts, and high test coverage." data-vi="Quy trình CI/CD tự động, đóng gói container, chuẩn hóa contract API và kiểm thử chặt chẽ.">
+                Automated CI/CD pipelines, containerization, strict API contracts, and high test coverage.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Docker & Compose</span>
+              <span class="px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">GitHub Actions</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Linux CLI</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">JUnit 5</span>
+              <span class="px-3 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">Integration Testing</span>
+              <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Event-Driven Patterns</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: HIGHLIGHT / CODE PHILOSOPHY CARD -->
+      <section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop w-full pt-space-3xl pb-space-lg">
+        <div class="rounded-[28px] bg-primary-container text-on-primary p-space-xl lg:p-space-2xl shadow-xl relative overflow-hidden">
+          <!-- Background Ambient Refraction -->
+          <div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-16 -bottom-16 w-96 h-96 rounded-full bg-tertiary-container/40 blur-3xl pointer-events-none"></div>
+
+          <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Philosophy Manifesto (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-space-md">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed font-code-sm text-code-sm self-start">
+                <span class="material-symbols-outlined text-[14px]">psychology</span>
+                <span data-en="Engineering Principles" data-vi="Triết lý Kỹ thuật">Engineering Principles</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg text-on-primary tracking-tight" data-en="“Readable over clever. Tested before merged.”" data-vi="“Code tường minh hơn viết mẹo. Kiểm thử kỹ càng trước khi gộp nhánh.”">
+                “Readable over clever. Tested before merged.”
+              </h2>
+              <p class="font-body-md text-body-md text-on-primary-container leading-relaxed" data-en="I prioritize deterministic error pathways, idempotent operations, and thread-safe boundaries over unnecessary abstractions." data-vi="Ưu tiên xử lý lỗi tất định, tính chất idempotent và ranh giới thread-safe thay vì tạo các lớp trừu tượng thừa thãi.">
+                I prioritize deterministic error pathways, idempotent operations, and thread-safe boundaries over unnecessary abstractions.
+              </p>
+              <div class="flex flex-col gap-space-sm pt-space-xs">
+                <div class="flex items-center gap-space-sm">
+                  <span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">verified</span>
+                  <span class="font-label-md text-label-md text-on-primary" data-en="Deterministic error recovery & circuit breaker fallbacks" data-vi="Phục hồi lỗi tất định & cơ chế dự phòng circuit breaker">Deterministic error recovery & circuit breaker fallbacks</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">splitscreen</span>
+                  <span class="font-label-md text-label-md text-on-primary" data-en="Thread-safe data structures & non-blocking concurrency" data-vi="Cấu trúc dữ liệu thread-safe & đa luồng non-blocking">Thread-safe data structures & non-blocking concurrency</span>
+                </div>
+                <div class="flex items-center gap-space-sm">
+                  <span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">lock</span>
+                  <span class="font-label-md text-label-md text-on-primary" data-en="Strict API contracts & idempotent service boundaries" data-vi="Contract API chặt chẽ & ranh giới service idempotent">Strict API contracts & idempotent service boundaries</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini IDE / Java Concurrency Snippet (7 cols) -->
+            <div class="lg:col-span-7">
+              <div class="rounded-2xl bg-tertiary/95 backdrop-blur-md shadow-2xl overflow-hidden font-code-sm text-code-sm border border-tertiary-container/80">
+                <!-- Window Bar -->
+                <div class="flex items-center justify-between px-4 py-3 bg-tertiary-container/70 border-b border-surface-container-highest/10">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-error/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-secondary-fixed/50"></span>
+                    <span class="w-3 h-3 rounded-full bg-secondary/80"></span>
+                    <span class="ml-2 text-on-tertiary-container text-[11px] font-mono">RequestCoalescingService.java</span>
+                  </div>
+                  <span class="text-on-tertiary-container text-[11px] font-mono">UTF-8 • Java 21 • Spring Boot 3.x</span>
+                </div>
+                <!-- Code Content -->
+                <div class="p-5 text-on-primary font-mono overflow-x-auto leading-relaxed space-y-1">
+                  <div><span class="text-secondary-fixed-dim">@Service</span></div>
+                  <div><span class="text-secondary-fixed-dim">@RequiredArgsConstructor</span></div>
+                  <div><span class="text-tertiary-fixed">public class</span> <span class="text-on-primary font-semibold">RequestCoalescingService</span> {</div>
+                  <div class="pl-4 text-on-primary-container">// Thread-safe in-flight deduplication map</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">private final</span> <span class="text-on-secondary-container">ConcurrentHashMap</span>&lt;<span class="text-tertiary-fixed">String</span>, <span class="text-on-secondary-container">CompletableFuture</span>&lt;<span class="text-secondary-fixed">EvaluationResult</span>&gt;&gt; <span class="text-on-primary">inFlight</span> = <span class="text-tertiary-fixed">new</span> <span class="text-on-secondary-container">ConcurrentHashMap</span>&lt;&gt;();</div>
+                  <div class="pl-4 mt-2"><span class="text-tertiary-fixed">public</span> <span class="text-on-secondary-container">CompletableFuture</span>&lt;<span class="text-secondary-fixed">EvaluationResult</span>&gt; <span class="text-secondary-fixed">executeCoalesced</span>(<span class="text-tertiary-fixed">String</span> key, <span class="text-on-secondary-container">AudioPayload</span> payload) {</div>
+                  <div class="pl-8"><span class="text-tertiary-fixed">return</span> <span class="text-on-primary">inFlight</span>.<span class="text-secondary-fixed">computeIfAbsent</span>(key, k -&gt; {</div>
+                  <div class="pl-12"><span class="text-tertiary-fixed">return</span> <span class="text-on-secondary-container">CompletableFuture</span>.<span class="text-secondary-fixed">supplyAsync</span>(() -&gt; <span class="text-on-primary">aiEngineRouter</span>.<span class="text-secondary-fixed">evaluate</span>(payload))</div>
+                  <div class="pl-16">.<span class="text-secondary-fixed">whenComplete</span>((res, ex) -&gt; <span class="text-on-primary">inFlight</span>.<span class="text-secondary-fixed">remove</span>(k));</div>
+                  <div class="pl-8">});</div>
+                  <div class="pl-4">}</div>
+                  <div>}</div>
+                </div>
+                <!-- Bottom Terminal Status Strip -->
+                <div class="px-5 py-2.5 bg-tertiary-container/90 flex items-center justify-between text-[11px] text-on-tertiary-container border-t border-surface-container-highest/10">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                    <span data-en="Passing: 100% thread-safety & integration suites • Spring Boot 3.x" data-vi="Đạt chuẩn: 100% kiểm thử thread-safety & integration suites • Spring Boot 3.x">Passing: 100% thread-safety & integration suites • Spring Boot 3.x</span>
+                  </div>
+                  <span class="font-mono text-secondary-fixed-dim" data-en="Clean Architecture" data-vi="Kiến trúc Sạch">Clean Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full mt-space-3xl py-space-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-[0_-1px_16px_rgba(28,39,30,0.03)] border-t border-outline-variant/30">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col gap-space-xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg pb-space-lg">
+        <div class="max-w-md">
+          <h3 class="font-headline-md text-headline-md text-primary" data-en="Let's build resilient backend systems together" data-vi="Cùng nhau xây dựng những hệ thống Backend vững chắc">
+            Let's build resilient backend systems together
+          </h3>
+          <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations." data-vi="Sẵn sàng đón nhận cơ hội việc làm Backend Developer / Kỹ sư Phần mềm toàn thời gian và các dự án AI.">
+            Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-sm">
+          <button id="copy-email-btn" onclick="copyEmail()" class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all border border-outline-variant/30" type="button">
+            <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            <span id="copy-email-text" data-en="Copy Email" data-vi="Sao chép Email">Copy Email</span>
+          </button>
+          <a class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-md text-label-md transition-all font-semibold" data-path="resume" href="../alex_rivera_resume_curriculum_vitae/code.html">
+            <span class="material-symbols-outlined text-[16px]">description</span>
+            <span data-en="View Resume" data-vi="Xem Hồ sơ">View Resume</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/20">
+        <p data-en="© 2026 Cao Thai Bao. Built with precision & clean architecture." data-vi="© 2026 Cao Thái Bảo. Xây dựng với sự chuẩn mực & kiến trúc sạch.">
+          © 2026 Cao Thai Bao. Built with precision & clean architecture.
+        </p>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/BaotheParo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/bao-cao-ab8854252/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="mailto:tanthaibao123@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE SCRIPT FOR LANGUAGE TOGGLE & INTERACTIONS -->
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      localStorage.setItem('portfolio_preferred_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Update button toggle UI
+      const btnEn = document.getElementById('lang-btn-en');
+      const btnVi = document.getElementById('lang-btn-vi');
+      if (btnEn && btnVi) {
+        if (lang === 'vi') {
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        }
+      }
+
+      // Update all elements with data-en / data-vi
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.textContent = text;
+        }
+      });
+    }
+
+    function copyEmail() {
+      const email = 'tanthaibao123@gmail.com';
+      const textSpan = document.getElementById('copy-email-text');
+      const btn = document.getElementById('copy-email-btn');
+      const currentLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+
+      navigator.clipboard.writeText(email).then(() => {
+        if (textSpan) {
+          textSpan.textContent = currentLang === 'vi' ? 'Đã sao chép!' : 'Email Copied!';
+        }
+        if (btn) {
+          btn.classList.add('bg-secondary-container', 'text-on-secondary-fixed');
+        }
+        setTimeout(() => {
+          if (textSpan) {
+            textSpan.textContent = textSpan.getAttribute(`data-${currentLang}`) || (currentLang === 'vi' ? 'Sao chép Email' : 'Copy Email');
+          }
+          if (btn) {
+            btn.classList.remove('bg-secondary-container', 'text-on-secondary-fixed');
+          }
+        }, 2200);
+      }).catch(err => {
+        console.error('Failed to copy email:', err);
+      });
+    }
+
+    // Auto initialize language on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>

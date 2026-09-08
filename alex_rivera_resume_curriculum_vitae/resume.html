@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Curriculum Vitae | Cao Thai Bao - Backend Developer</title>
+  <meta name="description" content="Official Curriculum Vitae of Cao Thai Bao - Backend Developer specializing in Systems Architecture, Database Concurrency, and Multi-modal AI Integrations." />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* Clean Print Stylesheet for A4 Paper Export */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      header, footer, .no-print, #lang-toggle-group, .fixed {
+        display: none !important;
+      }
+      main {
+        padding-top: 0 !important;
+        margin: 0 !important;
+      }
+      .cv-paper {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        background: #ffffff !important;
+      }
+      .bg-surface-container-low, .bg-surface-container, .bg-surface-container-lowest, .bg-surface-container-highest {
+        background: transparent !important;
+      }
+      .border {
+        border-color: #e5e7eb !important;
+      }
+      .badge-print {
+        border: 1px solid #d1d5db !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      "darkMode": "class",
+      "theme": {
+        "extend": {
+          "colors": {
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#434843",
+            "secondary": "#4d644e",
+            "secondary-container": "#cfeace",
+            "secondary-fixed-dim": "#b3cdb2",
+            "surface-tint": "#556156",
+            "surface-container-high": "#e7e9e6",
+            "primary": "#07110a",
+            "tertiary-fixed": "#e7dff2",
+            "tertiary-fixed-dim": "#cac4d5",
+            "on-primary-container": "#828f83",
+            "outline": "#747873",
+            "surface-container": "#eceeeb",
+            "surface": "#f8faf7",
+            "surface-container-highest": "#e1e3e0",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2e312f",
+            "secondary-fixed": "#cfeace",
+            "primary-fixed": "#d9e6d8",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#536a54",
+            "on-background": "#191c1b",
+            "inverse-primary": "#bdcabc",
+            "outline-variant": "#c4c8c1",
+            "on-secondary-fixed": "#0a200f",
+            "surface-container-low": "#f2f4f1",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#bdcabc",
+            "on-primary-fixed-variant": "#3e4a3f",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8faf7",
+            "surface-bright": "#f8faf7",
+            "on-secondary-fixed-variant": "#364c38",
+            "surface-dim": "#d8dbd8",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#494553",
+            "tertiary": "#110e1a",
+            "on-tertiary-fixed": "#1d1a26",
+            "surface-variant": "#e1e3e0",
+            "tertiary-container": "#262330",
+            "on-primary-fixed": "#131e15",
+            "primary-container": "#1c271e",
+            "on-surface": "#191c1b",
+            "inverse-on-surface": "#eff1ee",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#8f899a",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "space-2xl": "3rem",
+            "space-xl": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-3xl": "4.5rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "code-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface relative selection:bg-secondary-container selection:text-on-secondary-fixed">
+  <!-- Decorative Ambient Aurora Background Blur -->
+  <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden no-print">
+    <div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-secondary-fixed-dim/30 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-28 w-[420px] h-[420px] rounded-full bg-tertiary-fixed/30 blur-[130px]"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-[360px] h-[360px] rounded-full bg-secondary-container/25 blur-[120px]"></div>
+    <div class="absolute -bottom-24 right-1/4 w-96 h-96 rounded-full bg-secondary-fixed/20 blur-[110px]"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 inset-x-0 z-50 pt-space-md no-print">
+    <div class="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="h-full bg-surface/85 backdrop-blur-2xl rounded-full px-space-md lg:px-space-lg flex items-center justify-between shadow-[0_8px_30px_rgba(28,39,30,0.06)] border border-outline-variant/30">
+        <!-- Logo & Status -->
+        <div class="flex items-center gap-space-sm">
+          <a href="../alex_rivera_about_me_executive_summary/code.html" class="flex items-center gap-space-xs group">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+            </span>
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold group-hover:text-secondary transition-colors">Cao Thai Bao</span>
+          </a>
+          <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/60 text-secondary font-label-sm text-label-sm font-medium" data-en="Backend Developer" data-vi="Chuyên viên Backend">Backend Developer</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-space-xs p-1 bg-surface-container-low/70 rounded-full border border-outline-variant/30">
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="About Me" data-vi="Giới thiệu" href="../alex_rivera_about_me_executive_summary/code.html">About Me</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Projects" data-vi="Dự án" href="../alex_rivera_projects_case_studies/projects.html">Projects</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Skills" data-vi="Kỹ năng" href="../alex_rivera_skills_competencies_matrix/skills.html">Skills</a>
+          <a aria-current="page" class="px-space-md py-1.5 rounded-full transition-all bg-secondary-container text-on-secondary-fixed font-semibold text-label-md" data-en="Resume" data-vi="Hồ sơ" href="#">Resume</a>
+        </nav>
+
+        <!-- Language Toggle & Contact CTA -->
+        <div class="flex items-center gap-space-xs sm:gap-space-sm">
+          <!-- Sleek Floating Glass Pill Language Toggle -->
+          <div class="flex items-center bg-surface-container-low/80 p-0.5 rounded-full border border-outline-variant/50 shadow-inner" id="lang-toggle-group">
+            <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm">EN</button>
+            <button id="lang-btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface">VI</button>
+          </div>
+
+          <a class="inline-flex items-center justify-center px-space-md py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_4px_16px_rgba(28,39,30,0.18)] hover:bg-primary transition-all hover:scale-[1.02]" data-en="Contact" data-vi="Liên hệ" href="mailto:tanthaibao123@gmail.com">Contact</a>
+          <img alt="Cao Thai Bao" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AEtjO1WdQPiqPV5P1xtOeDBUViPVDrgMjEUk_bCogkKBv_qziDZVZ0IHO4v3JkzBzxZW1lWnazGzYblJxxFQxQ4XNDSE4VqlRrL7xD8Uy9QGJJ2ze3ILZVAcr0Ws2sUEhQyVkegMXHdlPZ8nOxgyXxZxSTC0_XQKC526AKJFuE7FdQbkcpH6rkmO_PpJHyC9dxm75LYnvuYYmaiTL1zbSu0kG2oYUFrLmklB638_ppeVA4z4PKAsGeqWRrm4ci6q"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-16 min-h-screen">
+    <div class="flex flex-col w-full">
+      <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop w-full py-space-xl lg:py-space-2xl">
+        
+        <!-- TOP ACTION & HEADER ZONE (NO PRINT) -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl no-print">
+          <div class="space-y-space-xs max-w-2xl">
+            <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-secondary-container/70 text-on-secondary-fixed font-label-sm text-label-sm tracking-wider uppercase font-semibold border border-secondary-fixed-dim/40">
+              <span class="material-symbols-outlined text-[14px]">verified</span>
+              <span data-en="Curriculum Vitae & Credentials" data-vi="Hồ Sơ Năng Lực & Văn Bằng">Curriculum Vitae & Credentials</span>
+            </div>
+            <h1 class="font-display-hero text-display-hero text-primary tracking-tight" data-en="Curriculum Vitae" data-vi="Hồ Sơ Năng Lực (CV)">
+              Curriculum Vitae
+            </h1>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" data-en="Engineered for technical evaluation. Verified academic background, enterprise backend architectures, and production performance metrics." data-vi="Được tối ưu cho đánh giá kỹ thuật chuyên sâu. Tổng hợp quá trình đào tạo, kinh nghiệm thiết kế hệ thống backend thực tế và các chỉ số hiệu năng đo lường được.">
+              Engineered for technical evaluation. Verified academic background, enterprise backend architectures, and production performance metrics.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm shrink-0">
+            <button onclick="window.print()" class="group relative inline-flex items-center justify-center gap-space-xs px-6 py-3.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container hover:scale-[1.015] active:scale-95 transition-all cursor-pointer" id="downloadPdfBtn" type="button">
+              <span class="material-symbols-outlined text-[18px] transition-transform group-hover:-translate-y-0.5">download</span>
+              <span data-en="Download Full Resume (PDF)" data-vi="Tải CV Bản Đầy Đủ (PDF)">Download Full Resume (PDF)</span>
+              <span class="absolute -top-2 -right-1 flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed-dim opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+              </span>
+            </button>
+            <div class="flex items-center gap-space-xs justify-center">
+              <a class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary hover:bg-surface-container-low font-label-md text-label-md shadow-sm transition-all border border-outline-variant/30" href="https://github.com/BaotheParo" rel="noopener noreferrer" target="_blank">
+                <span>GitHub Profile</span>
+                <span class="material-symbols-outlined text-[14px] text-secondary">arrow_outward</span>
+              </a>
+              <a class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary hover:bg-surface-container-low font-label-md text-label-md shadow-sm transition-all border border-outline-variant/30" href="https://www.linkedin.com/in/bao-cao-ab8854252/" rel="noopener noreferrer" target="_blank">
+                <span>LinkedIn</span>
+                <span class="material-symbols-outlined text-[14px] text-secondary">arrow_outward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRIVACY BANNER PILL (NO PRINT) -->
+        <div class="mb-space-xl flex items-center gap-space-sm p-space-sm sm:px-space-md rounded-2xl bg-surface-container-low/90 backdrop-blur-xl shadow-sm text-on-surface-variant border border-outline-variant/30 no-print">
+          <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-secondary-container text-on-secondary-fixed">
+            <span class="material-symbols-outlined text-[18px]">lock</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 w-full text-body-sm font-body-sm">
+            <span data-en="Personal phone number is redacted for online web privacy. Full unredacted contact details are provided immediately upon recruiter outreach." data-vi="Số điện thoại cá nhân được ẩn để bảo mật danh tính trực tuyến. Thông tin liên hệ đầy đủ sẽ được cung cấp ngay khi nhận được liên hệ từ nhà tuyển dụng.">
+              Personal phone number is redacted for online web privacy. Full unredacted contact details are provided immediately upon recruiter outreach.
+            </span>
+            <span class="inline-flex items-center text-secondary font-label-sm text-label-sm whitespace-nowrap gap-1 font-semibold">
+              <span class="material-symbols-outlined text-[14px]">shield</span>
+              <span data-en="Verified Identity" data-vi="Danh Tính Xác Thực">Verified Identity</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- DIGITAL PAPER SHEET CV CONTAINER -->
+        <!-- ========================================== -->
+        <div class="max-w-[920px] mx-auto w-full relative">
+          <!-- Ambient Glow Behind Paper (No Print) -->
+          <div class="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-secondary-fixed-dim/20 blur-[90px] -z-10 pointer-events-none no-print"></div>
+          <div class="absolute -bottom-10 -right-10 w-80 h-80 rounded-full bg-tertiary-fixed/20 blur-[100px] -z-10 pointer-events-none no-print"></div>
+
+          <!-- Main Paper Sheet Article -->
+          <article class="cv-paper relative bg-surface-container-lowest/95 backdrop-blur-2xl rounded-[28px] p-space-lg sm:p-space-2xl shadow-[0_20px_60px_-15px_rgba(28,39,30,0.07)] border border-outline-variant/30 flex flex-col gap-space-xl">
+            
+            <!-- A. CV HEADER -->
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pb-space-lg border-b border-surface-container-high/60">
+              <div class="space-y-1">
+                <div class="flex items-center gap-3">
+                  <h1 class="font-display-hero text-[32px] sm:text-[40px] font-extrabold text-primary tracking-tight">CAO THAI BAO</h1>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold" data-en="Available for Hire" data-vi="Sẵn Sàng Làm Việc">Available for Hire</span>
+                </div>
+                <p class="font-headline-sm text-secondary font-semibold" data-en="Backend Developer — Systems Architecture & Concurrency" data-vi="Kỹ Sư Backend — Kiến Trúc Hệ Thống & Xử Lý Concurrency">
+                  Backend Developer — Systems Architecture & Concurrency
+                </p>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-on-surface-variant font-code-sm text-code-sm">
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-secondary">location_on</span>
+                    <span data-en="Ho Chi Minh City, Vietnam" data-vi="TP. Hồ Chí Minh">Ho Chi Minh City, Vietnam</span>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-secondary">mail</span>
+                    <a href="mailto:tanthaibao123@gmail.com" class="hover:text-primary transition-colors">tanthaibao123@gmail.com</a>
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[15px] text-secondary">language</span>
+                    <span>baotheparo.github.io</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Redacted Phone Pill & Quick Identity -->
+              <div class="flex flex-col items-start md:items-end gap-1.5 shrink-0">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-code-sm text-code-sm border border-outline-variant/30">
+                  <span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+                  <span>+84 ••• ••• 529 [Redacted]</span>
+                </span>
+                <span class="text-on-surface-variant text-[11px] font-mono">SaiGon University • Class of '26</span>
+              </div>
+            </div>
+
+            <!-- B. SECTION 1: PROFESSIONAL OBJECTIVE -->
+            <section class="space-y-space-xs">
+              <div class="flex items-center gap-2 text-primary font-headline-sm font-bold uppercase tracking-wider text-[15px] pb-1 border-b border-surface-container-high/40">
+                <span class="material-symbols-outlined text-[18px] text-secondary">flag</span>
+                <span data-en="Professional Objective" data-vi="Mục Tiêu & Định Hướng Nghề Nghiệp">Professional Objective</span>
+              </div>
+              <p class="font-body-md text-on-surface-variant leading-relaxed text-[14px] sm:text-[15px]" data-en="Final-year Software Engineering student with hands-on enterprise backend experience designing high-throughput REST APIs, asynchronous background workflows, and multi-modal AI integrations using Spring Boot and Python FastAPI. Proven capability in optimizing database concurrency and engineering fault-tolerant microservices. Fluent in English (IELTS 6.0), seeking a Backend Developer position to drive robust system performance and reliable application architectures." data-vi="Sinh viên năm cuối ngành Kỹ thuật Phần mềm với kinh nghiệm thực tế tại doanh nghiệp trong việc thiết kế REST API chịu tải cao, pipeline xử lý ngầm bất đồng bộ và tích hợp các mô hình AI đa phương thức với Spring Boot và FastAPI. Có năng lực đã được chứng minh trong việc tối ưu hóa concurrency cơ sở dữ liệu và xây dựng microservices chịu lỗi bền bỉ. Tiếng Anh lưu loát (IELTS 6.0), hướng tới vị trí Backend Developer để cống hiến vào các kiến trúc hệ thống ổn định và hiệu năng cao.">
+                Final-year Software Engineering student with hands-on enterprise backend experience designing high-throughput REST APIs, asynchronous background workflows, and multi-modal AI integrations using Spring Boot and Python FastAPI. Proven capability in optimizing database concurrency and engineering fault-tolerant microservices. Fluent in English (IELTS 6.0), seeking a Backend Developer position to drive robust system performance and reliable application architectures.
+              </p>
+            </section>
+
+            <!-- C. SECTION 2: EDUCATION & ENGLISH PROFICIENCY -->
+            <section class="space-y-space-sm">
+              <div class="flex items-center gap-2 text-primary font-headline-sm font-bold uppercase tracking-wider text-[15px] pb-1 border-b border-surface-container-high/40">
+                <span class="material-symbols-outlined text-[18px] text-secondary">school</span>
+                <span data-en="Education & English Proficiency" data-vi="Học Vấn & Trình Độ Ngoại Ngữ">Education & English Proficiency</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                <!-- Academic Degree -->
+                <div class="p-4 rounded-2xl bg-surface-container-low/60 border border-outline-variant/20 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="font-headline-sm text-primary font-bold text-[16px]">SaiGon University</h3>
+                      <span class="font-code-sm text-code-sm text-secondary font-semibold" data-en="Graduation: Sep 2026" data-vi="Tốt nghiệp: 09/2026">Graduation: Sep 2026</span>
+                    </div>
+                    <p class="text-[13px] text-on-surface-variant font-medium mt-0.5" data-en="Bachelor of Engineering in Software Engineering" data-vi="Kỹ sư Kỹ thuật Phần mềm">Bachelor of Engineering in Software Engineering</p>
+                    <p class="text-[12px] text-on-surface-variant/80 mt-1 leading-relaxed" data-en="Focus: Systems Architecture, Database Optimization & Distributed Computing" data-vi="Chuyên sâu: Kiến trúc Hệ thống, Tối ưu Cơ sở dữ liệu & Tính toán Phân tán">Focus: Systems Architecture, Database Optimization & Distributed Computing</p>
+                  </div>
+                  <div class="mt-2 text-[11px] font-code-sm text-secondary font-semibold">Ho Chi Minh City, Vietnam</div>
+                </div>
+
+                <!-- IELTS Certificate -->
+                <div class="p-4 rounded-2xl bg-surface-container-low/60 border border-outline-variant/20 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="font-headline-sm text-primary font-bold text-[16px]">IELTS Academic (British Council)</h3>
+                      <span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-bold">Overall 6.0</span>
+                    </div>
+                    <p class="text-[13px] text-on-surface-variant font-medium mt-0.5" data-en="International English Language Testing System" data-vi="Chứng chỉ Tiếng Anh Học thuật Quốc tế">International English Language Testing System</p>
+                    <p class="text-[12px] text-on-surface-variant/80 mt-1 leading-relaxed" data-en="Professional Technical Verbal & Written Working Fluency (Achieved 2026)" data-vi="Đủ năng lực làm việc, giao tiếp chuyên môn và đọc viết tài liệu kỹ thuật thành thạo (Đạt năm 2026)">Professional Technical Verbal & Written Working Fluency (Achieved 2026)</p>
+                  </div>
+                  <div class="mt-2 text-[11px] font-code-sm text-secondary font-semibold" data-en="Verified British Council Test Report" data-vi="Chứng chỉ xác thực British Council">Verified British Council Test Report</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- D. SECTION 3: PROFESSIONAL EXPERIENCE -->
+            <section class="space-y-space-sm">
+              <div class="flex items-center gap-2 text-primary font-headline-sm font-bold uppercase tracking-wider text-[15px] pb-1 border-b border-surface-container-high/40">
+                <span class="material-symbols-outlined text-[18px] text-secondary">work</span>
+                <span data-en="Professional Experience" data-vi="Kinh Nghiệm Thực Chiến Tại Doanh Nghiệp">Professional Experience</span>
+              </div>
+
+              <!-- ENGONOW Experience Block -->
+              <div class="space-y-space-xs">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <h3 class="font-headline-sm text-primary font-bold text-[17px]">ENGONOW Education Technology</h3>
+                      <span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed text-[11px] font-bold font-code-sm">Enterprise EdTech</span>
+                    </div>
+                    <p class="text-[14px] text-secondary font-semibold" data-en="Backend Engineer Intern" data-vi="Thực tập sinh Kỹ sư Backend">Backend Engineer Intern</p>
+                  </div>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant font-semibold">Jun 2026 – Aug 2026</span>
+                </div>
+
+                <div class="flex flex-wrap gap-1 text-[11px] font-code-sm text-on-surface-variant pb-1">
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Java 21</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Spring Boot 3.x</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Python (FastAPI)</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">PostgreSQL</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Redis Pub/Sub</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Docker</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Google Gemini 2.5</span>
+                  <span class="px-2 py-0.5 rounded bg-surface-container">Groq Whisper</span>
+                </div>
+
+                <ul class="list-disc pl-5 space-y-1.5 text-on-surface-variant text-[14px] leading-relaxed">
+                  <li data-en="Developed core microservices for an automated IELTS evaluation platform utilizing Spring Boot 3.x and FastAPI, decoupling essay analysis and speech evaluation pipelines via asynchronous background workers." data-vi="Xây dựng các microservice cốt lõi cho nền tảng chấm thi IELTS tự động bằng Spring Boot 3.x và FastAPI; phân tách độc lập luồng phân tích bài viết và phát âm bằng các worker chạy ngầm bất đồng bộ.">
+                    Developed core microservices for an automated IELTS evaluation platform utilizing Spring Boot 3.x and FastAPI, decoupling essay analysis and speech evaluation pipelines via asynchronous background workers.
+                  </li>
+                  <li data-en="Implemented real-time test progress delivery to frontend clients using Redis Pub/Sub and Server-Sent Events (SSE), reducing polling traffic by 85% while maintaining non-blocking HTTP streaming connections." data-vi="Truyền trạng thái làm bài thời gian thực xuống client bằng Redis Pub/Sub và Server-Sent Events (SSE), cắt giảm 85% lưu lượng polling đồng thời duy trì kết nối streaming non-blocking.">
+                    Implemented real-time test progress delivery to frontend clients using Redis Pub/Sub and Server-Sent Events (SSE), reducing polling traffic by 85% while maintaining non-blocking HTTP streaming connections.
+                  </li>
+                  <li data-en="Engineered a resilient AI evaluation engine integrating Google Gemini 2.5 Flash and Groq Whisper-large-v3, with custom fallback routing and circuit breakers to handle API rate limits and network degradation." data-vi="Thiết kế engine chấm điểm AI chịu lỗi tích hợp Google Gemini 2.5 Flash và Groq Whisper-large-v3, bổ sung định tuyến dự phòng và circuit breaker xử lý triệt để tình trạng nghẽn rate limit và suy thoái mạng.">
+                    Engineered a resilient AI evaluation engine integrating Google Gemini 2.5 Flash and Groq Whisper-large-v3, with custom fallback routing and circuit breakers to handle API rate limits and network degradation.
+                  </li>
+                  <li data-en="Engineered acoustic diagnostic gates (WPM, phonation ratio, pause analysis) and enforced deterministic Cambridge half-band score rounding via high-precision Decimal arithmetic, completely eliminating floating-point score drift." data-vi="Thiết lập các tiêu chí phân tích âm học (tốc độ từ WPM, tỷ lệ ngắt âm, độ dài khoảng lặng) và áp dụng quy tắc làm tròn điểm Cambridge nửa band tất định bằng số học Decimal độ chính xác cao, loại bỏ hoàn toàn sai số điểm trôi.">
+                    Engineered acoustic diagnostic gates (WPM, phonation ratio, pause analysis) and enforced deterministic Cambridge half-band score rounding via high-precision Decimal arithmetic, completely eliminating floating-point score drift.
+                  </li>
+                  <li data-en="Authored comprehensive enterprise technical documentation, including OpenAPI 3.1 contracts, C4 architecture guides, and deployment runbooks for seamless handover to cross-functional teams." data-vi="Biên soạn hệ thống tài liệu kỹ thuật chuẩn doanh nghiệp, bao gồm hợp đồng API OpenAPI 3.1, sơ đồ kiến trúc C4 và tài liệu vận hành runbook phục vụ bàn giao liên phòng ban.">
+                    Authored comprehensive enterprise technical documentation, including OpenAPI 3.1 contracts, C4 architecture guides, and deployment runbooks for seamless handover to cross-functional teams.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- E. SECTION 4: TECHNICAL PROJECTS -->
+            <section class="space-y-space-sm">
+              <div class="flex items-center gap-2 text-primary font-headline-sm font-bold uppercase tracking-wider text-[15px] pb-1 border-b border-surface-container-high/40">
+                <span class="material-symbols-outlined text-[18px] text-secondary">terminal</span>
+                <span data-en="Technical Projects" data-vi="Dự Án Kỹ Thuật Tiêu Biểu">Technical Projects</span>
+              </div>
+
+              <!-- Project 1: Street Voice -->
+              <div class="space-y-space-2xs">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-headline-sm text-primary font-bold text-[16px]">Street Voice Backend Platform</h3>
+                    <a href="https://github.com/doanhdai/street-voice-backend.git" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary text-[12px] font-code-sm flex items-center gap-0.5">
+                      <span>GitHub</span>
+                      <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+                    </a>
+                  </div>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant font-semibold">Mar 2026 – May 2026</span>
+                </div>
+                <div class="text-[12px] font-code-sm text-secondary font-medium">Spring Boot 3.x • Java 21 • Python Integration • PostgreSQL • Docker</div>
+                <ul class="list-disc pl-5 space-y-1 text-on-surface-variant text-[14px] leading-relaxed">
+                  <li data-en="Engineered a secure modular REST API with Spring Boot 3.x supporting stateless JWT authorization and automated localization fallbacks." data-vi="Xây dựng REST API phân tầng bảo mật với Spring Boot 3.x, hỗ trợ xác thực JWT stateless và cơ chế fallback ngôn ngữ tự động.">
+                    Engineered a secure modular REST API with Spring Boot 3.x supporting stateless JWT authorization and automated localization fallbacks.
+                  </li>
+                  <li data-en="Offloaded heavy text transformation tasks to background worker threads via Spring @Async, improving request throughput by 300% and slashing median response latency to 12ms." data-vi="Chuyển các tác vụ xử lý chuỗi phức tạp sang luồng chạy ngầm bằng Spring @Async, tăng thông lượng phục vụ lên 300% và hạ độ trễ trung vị xuống 12ms.">
+                    Offloaded heavy text transformation tasks to background worker threads via Spring @Async, improving request throughput by 300% and slashing median response latency to 12ms.
+                  </li>
+                  <li data-en="Eliminated redundant upstream requests by 40% during traffic spikes by designing a thread-safe Request Coalescing layer using ConcurrentHashMap and CompletableFuture." data-vi="Cắt giảm 40% request trùng lặp khi lưu lượng tăng đột biến nhờ tầng gom cụm yêu cầu (Request Coalescing) thread-safe xây dựng bằng ConcurrentHashMap và CompletableFuture.">
+                    Eliminated redundant upstream requests by 40% during traffic spikes by designing a thread-safe Request Coalescing layer using ConcurrentHashMap and CompletableFuture.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Project 2: University Admission System -->
+              <div class="space-y-space-2xs pt-2">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-headline-sm text-primary font-bold text-[16px]">University Admission System (Hệ Thống Tuyển Sinh Đại Học)</h3>
+                    <a href="https://github.com/BaotheParo/app-tuyensinh.git" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary text-[12px] font-code-sm flex items-center gap-0.5">
+                      <span>GitHub</span>
+                      <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+                    </a>
+                  </div>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant font-semibold">Feb 2026 – Apr 2026</span>
+                </div>
+                <div class="text-[12px] font-code-sm text-secondary font-medium">Spring Boot • Java • MySQL • HikariCP • Enterprise Rule Optimization</div>
+                <ul class="list-disc pl-5 space-y-1 text-on-surface-variant text-[14px] leading-relaxed">
+                  <li data-en="Architected a centralized management system separating client workflows from transactional admission business services." data-vi="Thiết kế hệ thống quản lý tập trung, tách biệt rõ ràng giữa luồng tương tác người dùng và các dịch vụ xử lý nghiệp vụ xét tuyển giao dịch.">
+                    Architected a centralized management system separating client workflows from transactional admission business services.
+                  </li>
+                  <li data-en="Eliminated database deadlocks during 50,000+ candidate batch allocations by implementing batch execution with JdbcTemplate.batchUpdate() and sorting records lexicographically prior to processing." data-vi="Triệt tiêu hoàn toàn hiện tượng khóa chết (deadlock) CSDL khi xử lý hàng loạt hơn 50.000 hồ sơ bằng cách thực thi JdbcTemplate.batchUpdate() kết hợp tiền sắp xếp thứ tự từ điển các bản ghi.">
+                    Eliminated database deadlocks during 50,000+ candidate batch allocations by implementing batch execution with JdbcTemplate.batchUpdate() and sorting records lexicographically prior to processing.
+                  </li>
+                  <li data-en="Mitigated the N+1 query bottleneck within sorting logic by introducing an In-Memory Caching strategy using O(1) lookups, cutting total allocation runtime from several minutes down to under 500ms." data-vi="Xóa bỏ điểm nghẽn truy vấn N+1 trong thuật toán phân loại bằng cơ chế in-memory caching với thời gian tra cứu O(1), rút ngắn thời gian xử lý toàn đợt từ vài phút xuống dưới 500ms.">
+                    Mitigated the N+1 query bottleneck within sorting logic by introducing an In-Memory Caching strategy using O(1) lookups, cutting total allocation runtime from several minutes down to under 500ms.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- F. SECTION 5: TECHNICAL SKILLS SUMMARY -->
+            <section class="space-y-space-sm">
+              <div class="flex items-center gap-2 text-primary font-headline-sm font-bold uppercase tracking-wider text-[15px] pb-1 border-b border-surface-container-high/40">
+                <span class="material-symbols-outlined text-[18px] text-secondary">layers</span>
+                <span data-en="Technical Skills Summary" data-vi="Tổng Hợp Kỹ Năng Kỹ Thuật">Technical Skills Summary</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm text-[13px]">
+                <div class="p-3 rounded-xl bg-surface-container-low/60 border border-outline-variant/20">
+                  <span class="font-bold text-primary block mb-1 font-headline-sm text-[13px]" data-en="Programming Languages" data-vi="Ngôn Ngữ Lập Trình">Programming Languages</span>
+                  <p class="text-on-surface-variant font-code-sm">Java (17/21), Python, SQL, JavaScript, HTML, CSS</p>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-low/60 border border-outline-variant/20">
+                  <span class="font-bold text-primary block mb-1 font-headline-sm text-[13px]" data-en="Frameworks & Backend" data-vi="Khung Ứng Dụng Backend">Frameworks & Backend</span>
+                  <p class="text-on-surface-variant font-code-sm">Spring Boot (3.x), Spring Data JPA, Spring Security, FastAPI, Pydantic v2, RESTful APIs</p>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-low/60 border border-outline-variant/20">
+                  <span class="font-bold text-primary block mb-1 font-headline-sm text-[13px]" data-en="Databases & Caching" data-vi="Cơ Sở Dữ Liệu & Cache">Databases & Caching</span>
+                  <p class="text-on-surface-variant font-code-sm">PostgreSQL (JSONB), MySQL, Redis (Pub/Sub, Caching, SSE), HikariCP</p>
+                </div>
+                <div class="p-3 rounded-xl bg-surface-container-low/60 border border-outline-variant/20">
+                  <span class="font-bold text-primary block mb-1 font-headline-sm text-[13px]" data-en="DevOps, Tools & Practices" data-vi="DevOps & Công Cụ">DevOps, Tools & Practices</span>
+                  <p class="text-on-surface-variant font-code-sm">Docker & Compose, Git, GitHub Actions, Linux CLI, JUnit 5, Integration Testing, Circuit Breakers</p>
+                </div>
+              </div>
+            </section>
+
+          </article>
+        </div>
+
+        <!-- RECRUITER FAST-TRACK CTA CARD (NO PRINT) -->
+        <div class="max-w-[920px] mx-auto w-full mt-space-xl no-print">
+          <div class="rounded-[26px] bg-primary-container text-on-primary p-space-lg sm:p-space-xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-space-lg border border-tertiary-container">
+            <div class="space-y-1 text-center sm:text-left">
+              <h3 class="font-headline-md text-headline-md text-on-primary font-bold" data-en="Need full unredacted contact details or technical discussions?" data-vi="Cần thông tin liên hệ đầy đủ hoặc trao đổi chuyên môn?">
+                Need full unredacted contact details or technical discussions?
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-primary-container max-w-xl" data-en="Feel free to reach out directly via email for unredacted phone contact, references, or scheduling a technical conversation." data-vi="Nhà tuyển dụng có thể liên hệ trực tiếp qua email để nhận số điện thoại, trao đổi thêm về các dự án hoặc sắp xếp buổi phỏng vấn.">
+                Feel free to reach out directly via email for unredacted phone contact, references, or scheduling a technical conversation.
+              </p>
+            </div>
+            <a class="inline-flex items-center gap-space-xs px-6 py-3 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-md text-label-md font-semibold transition-all shrink-0 shadow-md hover:scale-[1.02]" href="mailto:tanthaibao123@gmail.com">
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+              <span data-en="Email Thai Bao" data-vi="Gửi Email Trực Tiếp">Email Thai Bao</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- STANDARDIZED FOOTER (NO PRINT) -->
+  <footer class="w-full mt-space-3xl py-space-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-[0_-1px_16px_rgba(28,39,30,0.03)] border-t border-outline-variant/30 no-print">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col gap-space-xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg pb-space-lg">
+        <div class="max-w-md">
+          <h3 class="font-headline-md text-headline-md text-primary" data-en="Let's build resilient backend systems together" data-vi="Cùng nhau xây dựng những hệ thống Backend vững chắc">
+            Let's build resilient backend systems together
+          </h3>
+          <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations." data-vi="Sẵn sàng đón nhận cơ hội việc làm Backend Developer / Kỹ sư Phần mềm toàn thời gian và các dự án AI.">
+            Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-sm">
+          <button id="copy-email-btn" onclick="copyEmail()" class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all border border-outline-variant/30" type="button">
+            <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            <span id="copy-email-text" data-en="Copy Email" data-vi="Sao chép Email">Copy Email</span>
+          </button>
+          <button onclick="window.print()" class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-md text-label-md transition-all font-semibold cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">print</span>
+            <span data-en="Print / Save PDF" data-vi="In / Lưu PDF">Print / Save PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/20">
+        <p data-en="© 2026 Cao Thai Bao. All rights reserved." data-vi="© 2026 Cao Thái Bảo. Tất cả quyền được bảo lưu.">
+          © 2026 Cao Thai Bao. All rights reserved.
+        </p>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/BaotheParo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/bao-cao-ab8854252/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="mailto:tanthaibao123@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE SCRIPT FOR LANGUAGE TOGGLE & PRINT -->
+  <script>
+    // Unified Language Toggle Script
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      localStorage.setItem('portfolio_preferred_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Update button UI
+      const btnEn = document.getElementById('lang-btn-en');
+      const btnVi = document.getElementById('lang-btn-vi');
+      if (btnEn && btnVi) {
+        if (lang === 'vi') {
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        }
+      }
+
+      // Update all elements with data-en / data-vi
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.textContent = text;
+        }
+      });
+    }
+
+    // Interactive Copy Email Helper
+    function copyEmail() {
+      const email = 'tanthaibao123@gmail.com';
+      const textSpan = document.getElementById('copy-email-text');
+      const btn = document.getElementById('copy-email-btn');
+      const currentLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+
+      navigator.clipboard.writeText(email).then(() => {
+        if (textSpan) {
+          textSpan.textContent = currentLang === 'vi' ? 'Đã sao chép!' : 'Email Copied!';
+        }
+        if (btn) {
+          btn.classList.add('bg-secondary-container', 'text-on-secondary-fixed');
+        }
+        setTimeout(() => {
+          if (textSpan) {
+            textSpan.textContent = textSpan.getAttribute(`data-${currentLang}`) || (currentLang === 'vi' ? 'Sao chép Email' : 'Copy Email');
+          }
+          if (btn) {
+            btn.classList.remove('bg-secondary-container', 'text-on-secondary-fixed');
+          }
+        }, 2200);
+      }).catch(err => {
+        console.error('Failed to copy email:', err);
+      });
+    }
+
+    // Auto initialize language on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Technical Skills & Proof-of-Work Matrix | Cao Thai Bao - Backend Developer</title>
+  <meta name="description" content="Technical capability matrix and production proof-of-work for Backend Developer Cao Thai Bao. Demonstrating Java 21, Spring Boot, FastAPI, Concurrency Engineering, and Database Optimizations." />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      "darkMode": "class",
+      "theme": {
+        "extend": {
+          "colors": {
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#434843",
+            "secondary": "#4d644e",
+            "secondary-container": "#cfeace",
+            "secondary-fixed-dim": "#b3cdb2",
+            "surface-tint": "#556156",
+            "surface-container-high": "#e7e9e6",
+            "primary": "#07110a",
+            "tertiary-fixed": "#e7dff2",
+            "tertiary-fixed-dim": "#cac4d5",
+            "on-primary-container": "#828f83",
+            "outline": "#747873",
+            "surface-container": "#eceeeb",
+            "surface": "#f8faf7",
+            "surface-container-highest": "#e1e3e0",
+            "error": "#ba1a1a",
+            "inverse-surface": "#2e312f",
+            "secondary-fixed": "#cfeace",
+            "primary-fixed": "#d9e6d8",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#536a54",
+            "on-background": "#191c1b",
+            "inverse-primary": "#bdcabc",
+            "outline-variant": "#c4c8c1",
+            "on-secondary-fixed": "#0a200f",
+            "surface-container-low": "#f2f4f1",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#bdcabc",
+            "on-primary-fixed-variant": "#3e4a3f",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8faf7",
+            "surface-bright": "#f8faf7",
+            "on-secondary-fixed-variant": "#364c38",
+            "surface-dim": "#d8dbd8",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#494553",
+            "tertiary": "#110e1a",
+            "on-tertiary-fixed": "#1d1a26",
+            "surface-variant": "#e1e3e0",
+            "tertiary-container": "#262330",
+            "on-primary-fixed": "#131e15",
+            "primary-container": "#1c271e",
+            "on-surface": "#191c1b",
+            "inverse-on-surface": "#eff1ee",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#8f899a",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xs": "0.25rem",
+            "margin-desktop": "3rem",
+            "space-2xl": "3rem",
+            "space-xl": "2rem",
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-3xl": "4.5rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400"}],
+            "code-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface relative selection:bg-secondary-container selection:text-on-secondary-fixed">
+  <!-- Decorative Ambient Aurora Background Blur -->
+  <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <div class="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-secondary-fixed-dim/30 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-28 w-[420px] h-[420px] rounded-full bg-tertiary-fixed/30 blur-[130px]"></div>
+    <div class="absolute bottom-1/3 left-1/3 w-[360px] h-[360px] rounded-full bg-secondary-container/25 blur-[120px]"></div>
+    <div class="absolute -bottom-24 right-1/4 w-96 h-96 rounded-full bg-secondary-fixed/20 blur-[110px]"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 inset-x-0 z-50 pt-space-md">
+    <div class="h-16 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop">
+      <div class="h-full bg-surface/85 backdrop-blur-2xl rounded-full px-space-md lg:px-space-lg flex items-center justify-between shadow-[0_8px_30px_rgba(28,39,30,0.06)] border border-outline-variant/30">
+        <!-- Logo & Status -->
+        <div class="flex items-center gap-space-sm">
+          <a href="index.html" class="flex items-center gap-space-xs group">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+            </span>
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold group-hover:text-secondary transition-colors">Cao Thai Bao</span>
+          </a>
+          <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/60 text-secondary font-label-sm text-label-sm font-medium" data-en="Backend Developer" data-vi="Chuyên viên Backend">Backend Developer</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-space-xs p-1 bg-surface-container-low/70 rounded-full border border-outline-variant/30">
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="About Me" data-vi="Giới thiệu" href="index.html">About Me</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Projects" data-vi="Dự án" href="projects.html">Projects</a>
+          <a aria-current="page" class="px-space-md py-1.5 rounded-full transition-all bg-secondary-container text-on-secondary-fixed font-semibold text-label-md" data-en="Skills" data-vi="Kỹ năng" href="skills.html">Skills</a>
+          <a class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-en="Resume" data-vi="Hồ sơ" href="resume.html">Resume</a>
+        </nav>
+
+        <!-- Language Toggle & Contact CTA -->
+        <div class="flex items-center gap-space-xs sm:gap-space-sm">
+          <!-- Sleek Floating Glass Pill Language Toggle -->
+          <div class="flex items-center bg-surface-container-low/80 p-0.5 rounded-full border border-outline-variant/50 shadow-inner" id="lang-toggle-group">
+            <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm">EN</button>
+            <button id="lang-btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface">VI</button>
+          </div>
+
+          <a class="inline-flex items-center justify-center px-space-md py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_4px_16px_rgba(28,39,30,0.18)] hover:bg-primary transition-all hover:scale-[1.02]" data-en="Contact" data-vi="Liên hệ" href="mailto:tanthaibao123@gmail.com">Contact</a>
+          <img alt="Cao Thai Bao" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AEtjO1WdQPiqPV5P1xtOeDBUViPVDrgMjEUk_bCogkKBv_qziDZVZ0IHO4v3JkzBzxZW1lWnazGzYblJxxFQxQ4XNDSE4VqlRrL7xD8Uy9QGJJ2ze3ILZVAcr0Ws2sUEhQyVkegMXHdlPZ8nOxgyXxZxSTC0_XQKC526AKJFuE7FdQbkcpH6rkmO_PpJHyC9dxm75LYnvuYYmaiTL1zbSu0kG2oYUFrLmklB638_ppeVA4z4PKAsGeqWRrm4ci6q"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-16 min-h-screen">
+    <div class="flex flex-col w-full">
+      <div class="max-w-7xl mx-auto w-full px-margin-mobile lg:px-margin-desktop py-space-xl lg:py-space-2xl flex flex-col gap-space-2xl">
+        
+        <!-- HEADER & PHILOSOPHY SECTION -->
+        <div class="flex flex-col gap-space-md">
+          <div class="flex flex-wrap items-center gap-space-sm">
+            <span class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-secondary-container/80 text-on-secondary-fixed font-code-sm text-code-sm uppercase tracking-wider shadow-sm border border-secondary-fixed-dim/40">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              <span data-en="Competency & Architecture Matrix" data-vi="Ma Trận Năng Lực & Nền Tảng Kỹ Thuật">Competency & Architecture Matrix</span>
+            </span>
+            <span class="text-on-surface-variant font-code-sm text-code-sm">v2026 // PRODUCTION BENCHMARKS</span>
+          </div>
+
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+            <div class="max-w-3xl">
+              <h1 class="font-display-hero text-display-hero text-primary tracking-tight" data-en="Practical Engineering Grounded in Production Constraints" data-vi="Kỹ Năng Kỹ Thuật Gắn Liền Với Bài Toán Thực Tế">
+                Practical Engineering Grounded in Production Constraints
+              </h1>
+              <p class="mt-space-xs font-body-lg text-body-lg text-on-surface-variant leading-relaxed" data-en="I evaluate technical skills not through arbitrary percentage bars, but by real-world system behaviors: handling concurrency, optimizing database bottlenecks, ensuring fault tolerance, and delivering verifiable business impact." data-vi="Tôi không đo lường kỹ năng bằng thanh phần trăm cảm tính, mà qua năng lực giải quyết vấn đề trong thực tế: xử lý concurrency, gỡ điểm nghẽn CSDL, thiết kế hệ thống chịu lỗi và mang lại hiệu quả đo lường được.">
+                I evaluate technical skills not through arbitrary percentage bars, but by real-world system behaviors: handling concurrency, optimizing database bottlenecks, ensuring fault tolerance, and delivering verifiable business impact.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-xs self-start lg:self-end text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/80 px-3 py-1.5 rounded-full border border-outline-variant/30">
+              <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+              <span data-en="Benchmarked against production repositories" data-vi="Kiểm chứng trên hệ thống thực tế">Benchmarked against production repositories</span>
+            </div>
+          </div>
+
+          <!-- Quick Summary Stat Bar (3 cards) -->
+          <div class="mt-space-xs grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-sm rounded-2xl bg-surface-container-low/70 backdrop-blur-md shadow-sm border border-outline-variant/30">
+            <div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest/80 rounded-xl border border-outline-variant/20">
+              <div class="w-8 h-8 rounded-lg bg-secondary-container/60 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[18px]">dns</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" data-en="Primary Track" data-vi="Chuyên Môn Chính">Primary Track</span>
+                <span class="font-headline-sm text-headline-sm text-primary truncate" data-en="Backend & Systems Architecture" data-vi="Kiến Trúc Backend & Hệ Thống">Backend & Systems Architecture</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest/80 rounded-xl border border-outline-variant/20">
+              <div class="w-8 h-8 rounded-lg bg-tertiary-fixed/60 flex items-center justify-center text-on-tertiary-fixed">
+                <span class="material-symbols-outlined text-[18px]">terminal</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" data-en="Core Polyglot" data-vi="Ngôn Ngữ & Stack">Core Polyglot</span>
+                <span class="font-headline-sm text-headline-sm text-primary truncate">Java 21 • Spring Boot • FastAPI</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest/80 rounded-xl border border-outline-variant/20">
+              <div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" data-en="Guiding Principle" data-vi="Triết Lý Cốt Lõi">Guiding Principle</span>
+                <span class="font-headline-sm text-headline-sm text-primary truncate" data-en="Deterministic & Resilient" data-vi="Tất Định & Chịu Tải Cao">Deterministic & Resilient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CORE TECHNICAL DOMAINS (4 BENTO CARDS WITH PROOF-OF-WORK BADGES) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+          
+          <!-- CARD 1: Backend Frameworks & Enterprise APIs (Col-span 6) -->
+          <div class="lg:col-span-6 flex flex-col justify-between rounded-[26px] p-space-xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(28,39,30,0.06)] hover:translate-y-[-2px] transition-all border border-outline-variant/30">
+            <div>
+              <div class="flex items-start justify-between gap-space-md pb-space-md border-b border-outline-variant/20">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-2xl bg-secondary-container/70 flex items-center justify-center text-secondary shadow-sm">
+                    <span class="material-symbols-outlined text-[22px]">dns</span>
+                  </div>
+                  <div>
+                    <h2 class="font-headline-md text-headline-md text-primary" data-en="Backend Frameworks & Enterprise APIs" data-vi="Khung Ứng Dụng Backend & Thiết Kế API">Backend Frameworks & Enterprise APIs</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant" data-en="High-throughput services, transactional safety & strict contracts" data-vi="Dịch vụ chịu tải cao, quản lý transaction & contract chặt chẽ">High-throughput services, transactional safety & strict contracts</p>
+                  </div>
+                </div>
+                <span class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-secondary font-code-sm text-code-sm font-semibold">CORE</span>
+              </div>
+
+              <!-- Deep-Dive Competencies -->
+              <div class="flex flex-col gap-space-md mt-space-md">
+                <!-- Sub-block 1: Spring Boot 3.x & Java 21 -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary">Spring Boot 3.x & Java 21</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: Street Voice, ENGONOW" data-vi="Áp dụng: Street Voice, ENGONOW">Applied in: Street Voice, ENGONOW</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Architected modular RESTful services, transactional service boundaries (@Transactional), stateless JWT auth, and asynchronous task execution via @Async." data-vi="Thiết kế RESTful service phân tầng, quản lý transaction an toàn (@Transactional), xác thực JWT stateless và xử lý tác vụ ngầm qua @Async.">
+                    Architected modular RESTful services, transactional service boundaries (@Transactional), stateless JWT auth, and asynchronous task execution via @Async.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Java 21</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Spring Boot 3.x</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Spring Security (JWT)</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Spring Data JPA</span>
+                  </div>
+                </div>
+
+                <!-- Sub-block 2: FastAPI & Python Integration -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary">FastAPI & Python Integration</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: ENGONOW IELTS" data-vi="Áp dụng: ENGONOW IELTS">Applied in: ENGONOW IELTS</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Engineered high-performance microservices for AI evaluation pipelines; leveraged Pydantic v2 for strict runtime DTO contract validation." data-vi="Xây dựng microservices hiệu năng cao phục vụ pipeline chấm điểm AI; tận dụng Pydantic v2 để chuẩn hóa và validate dữ liệu DTO chặt chẽ.">
+                    Engineered high-performance microservices for AI evaluation pipelines; leveraged Pydantic v2 for strict runtime DTO contract validation.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">FastAPI</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Pydantic v2</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Uvicorn Asynchronous</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">REST API Contracts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Tech Pills Footer -->
+            <div class="flex flex-wrap gap-1.5 pt-space-md mt-space-md border-t border-outline-variant/20">
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Java 21</span>
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Spring Boot 3.x</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">FastAPI</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Spring Data JPA</span>
+              <span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">RESTful APIs</span>
+            </div>
+          </div>
+
+
+          <!-- CARD 2: Databases, Caching & Data Concurrency (Col-span 6) -->
+          <div class="lg:col-span-6 flex flex-col justify-between rounded-[26px] p-space-xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(28,39,30,0.06)] hover:translate-y-[-2px] transition-all border border-outline-variant/30">
+            <div>
+              <div class="flex items-start justify-between gap-space-md pb-space-md border-b border-outline-variant/20">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container shadow-sm">
+                    <span class="material-symbols-outlined text-[22px]">database</span>
+                  </div>
+                  <div>
+                    <h2 class="font-headline-md text-headline-md text-primary" data-en="Databases, Caching & Data Concurrency" data-vi="Cơ Sở Dữ Liệu, Bộ Nhớ Đệm & Concurrency">Databases, Caching & Data Concurrency</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant" data-en="Deadlock elimination, pool tuning & sub-second batch allocation" data-vi="Xóa bỏ deadlock, tinh chỉnh pool & xử lý batch dưới 500ms">Deadlock elimination, pool tuning & sub-second batch allocation</p>
+                  </div>
+                </div>
+                <span class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-secondary font-code-sm text-code-sm font-semibold">STORAGE</span>
+              </div>
+
+              <!-- Deep-Dive Competencies -->
+              <div class="flex flex-col gap-space-md mt-space-md">
+                <!-- Sub-block 1: Relational Tuning & Deadlock Prevention -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Relational Tuning & Deadlock Prevention" data-vi="Tối Ưu Quan Hệ & Phòng Tránh Deadlock">Relational Tuning & Deadlock Prevention</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: Admission System" data-vi="Áp dụng: Tuyển Sinh ĐH">Applied in: Admission System</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Eliminated batch deadlocks for 50,000+ candidates using lexicographically ordered batches with JdbcTemplate.batchUpdate(). Resolved N+1 query traps via indexed in-memory lookups." data-vi="Triệt tiêu hoàn toàn deadlock khi xét tuyển hơn 50.000 thí sinh bằng cách sắp xếp bản ghi theo thứ tự từ điển trước khi batch update; xóa bỏ điểm nghẽn N+1 bằng bộ nhớ đệm index O(1).">
+                    Eliminated batch deadlocks for 50,000+ candidates using lexicographically ordered batches with JdbcTemplate.batchUpdate(). Resolved N+1 query traps via indexed in-memory lookups.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">MySQL</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">PostgreSQL (JSONB)</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">JdbcTemplate Batching</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">HikariCP Tuning</span>
+                  </div>
+                </div>
+
+                <!-- Sub-block 2: Redis Pub/Sub, Caching & Connection Pools -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Redis Pub/Sub, Caching & Streaming" data-vi="Redis Pub/Sub, Bộ Nhớ Cache & SSE">Redis Pub/Sub, Caching & Streaming</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: ENGONOW, Street Voice" data-vi="Áp dụng: ENGONOW, Street Voice">Applied in: ENGONOW, Street Voice</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Configured multi-tier caching to slash database load; decoupled client notifications with Redis Pub/Sub and SSE streaming; optimized HikariCP connection pools for low-latency queries." data-vi="Thiết lập cache đa tầng giảm tải truy vấn CSDL; tách biệt thông báo kết quả qua Redis Pub/Sub và streaming SSE; tinh chỉnh pool HikariCP duy trì độ trễ thấp.">
+                    Configured multi-tier caching to slash database load; decoupled client notifications with Redis Pub/Sub and SSE streaming; optimized HikariCP connection pools for low-latency queries.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Redis Pub/Sub</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">SSE Streaming</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">In-Memory Index</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">HikariCP Pool</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Tech Pills Footer -->
+            <div class="flex flex-wrap gap-1.5 pt-space-md mt-space-md border-t border-outline-variant/20">
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">PostgreSQL (JSONB)</span>
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">MySQL</span>
+              <span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">Redis Pub/Sub</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">HikariCP</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">JdbcTemplate</span>
+            </div>
+          </div>
+
+
+          <!-- CARD 3: Distributed Systems, Concurrency & Resilience (Col-span 6) -->
+          <div class="lg:col-span-6 flex flex-col justify-between rounded-[26px] p-space-xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(28,39,30,0.06)] hover:translate-y-[-2px] transition-all border border-outline-variant/30">
+            <div>
+              <div class="flex items-start justify-between gap-space-md pb-space-md border-b border-outline-variant/20">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-2xl bg-secondary-container/70 flex items-center justify-center text-secondary shadow-sm">
+                    <span class="material-symbols-outlined text-[22px]">hub</span>
+                  </div>
+                  <div>
+                    <h2 class="font-headline-md text-headline-md text-primary" data-en="Distributed Systems, Concurrency & Resilience" data-vi="Kiến Trúc Phân Tán & Cơ Chế Chịu Lỗi">Distributed Systems, Concurrency & Resilience</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant" data-en="Thread safety, request coalescing & circuit-breaker fallbacks" data-vi="Thread safety, gom cụm request & cơ chế dự phòng circuit breaker">Thread safety, request coalescing & circuit-breaker fallbacks</p>
+                  </div>
+                </div>
+                <span class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-secondary font-code-sm text-code-sm font-semibold">CONCURRENCY</span>
+              </div>
+
+              <!-- Deep-Dive Competencies -->
+              <div class="flex flex-col gap-space-md mt-space-md">
+                <!-- Sub-block 1: Thread Safety & Request Coalescing -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Thread Safety & Request Coalescing" data-vi="An Toàn Đa Luồng & Gom Cụm Request">Thread Safety & Request Coalescing</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: Street Voice Platform" data-vi="Áp dụng: Street Voice Platform">Applied in: Street Voice Platform</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Designed thread-safe request deduplication layers using ConcurrentHashMap and CompletableFuture, eliminating redundant upstream compute by 40% during traffic surges." data-vi="Thiết kế cơ chế gom yêu cầu (Request Coalescing) thread-safe bằng ConcurrentHashMap và CompletableFuture, cắt giảm 40% tác vụ trùng lặp khi truy cập đột biến.">
+                    Designed thread-safe request deduplication layers using ConcurrentHashMap and CompletableFuture, eliminating redundant upstream compute by 40% during traffic surges.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">ConcurrentHashMap</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">CompletableFuture</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Spring @Async</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Atomic computeIfAbsent</span>
+                  </div>
+                </div>
+
+                <!-- Sub-block 2: Fault-Tolerant AI Pipelines & Numerical Determinism -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Fault-Tolerant AI Pipelines & Math" data-vi="Pipeline AI Chịu Lỗi & Phép Toán Tất Định">Fault-Tolerant AI Pipelines & Math</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="Applied in: ENGONOW EdTech" data-vi="Áp dụng: ENGONOW EdTech">Applied in: ENGONOW EdTech</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Integrated Google Gemini 2.5 and Groq Whisper with circuit-breaker fallback routing; enforced deterministic score rounding using high-precision BigDecimal to eliminate floating-point drift." data-vi="Tích hợp Google Gemini 2.5 và Groq Whisper với cơ chế circuit breaker dự phòng; đảm bảo tính tất định khi chấm điểm bằng phép toán BigDecimal chính xác cao.">
+                    Integrated Google Gemini 2.5 and Groq Whisper with circuit-breaker fallback routing; enforced deterministic score rounding using high-precision BigDecimal to eliminate floating-point drift.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Circuit Breaker</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">BigDecimal Math</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Gemini 2.5 Flash</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Groq Whisper</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Tech Pills Footer -->
+            <div class="flex flex-wrap gap-1.5 pt-space-md mt-space-md border-t border-outline-variant/20">
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">ConcurrentHashMap</span>
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">CompletableFuture</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Circuit Breakers</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Event-Driven Architecture</span>
+              <span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">Decimal Math</span>
+            </div>
+          </div>
+
+
+          <!-- CARD 4: DevOps, CI/CD, Testing & Governance (Col-span 6) -->
+          <div class="lg:col-span-6 flex flex-col justify-between rounded-[26px] p-space-xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(28,39,30,0.06)] hover:translate-y-[-2px] transition-all border border-outline-variant/30">
+            <div>
+              <div class="flex items-start justify-between gap-space-md pb-space-md border-b border-outline-variant/20">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+                    <span class="material-symbols-outlined text-[22px]">terminal</span>
+                  </div>
+                  <div>
+                    <h2 class="font-headline-md text-headline-md text-primary" data-en="DevOps, CI/CD, Testing & Governance" data-vi="DevOps, Kiểm Thử & Chuẩn Hóa Kiến Trúc">DevOps, CI/CD, Testing & Governance</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant" data-en="Multi-stage Docker, GitHub Actions, JUnit 5 & C4 models" data-vi="Docker multi-stage, GitHub Actions, JUnit 5 & mô hình C4">Multi-stage Docker, GitHub Actions, JUnit 5 & C4 models</p>
+                  </div>
+                </div>
+                <span class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-secondary font-code-sm text-code-sm font-semibold">DEVOPS</span>
+              </div>
+
+              <!-- Deep-Dive Competencies -->
+              <div class="flex flex-col gap-space-md mt-space-md">
+                <!-- Sub-block 1: Automated CI/CD & Containerization -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Automated CI/CD & Containerization" data-vi="CI/CD Tự Động & Đóng Gói Container">Automated CI/CD & Containerization</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="All Production Repos" data-vi="Toàn bộ Repo Thực tế">All Production Repos</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Containerized multi-service stacks with multi-stage Docker builds; automated build, linting, and regression pipelines using GitHub Actions." data-vi="Đóng gói ứng dụng đa dịch vụ bằng Docker multi-stage tối ưu dung lượng; tự động hóa quy trình build, kiểm tra mã nguồn và regression test với GitHub Actions.">
+                    Containerized multi-service stacks with multi-stage Docker builds; automated build, linting, and regression pipelines using GitHub Actions.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Docker</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Docker Compose</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">GitHub Actions</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Linux CLI</span>
+                  </div>
+                </div>
+
+                <!-- Sub-block 2: Integration Testing & Architectural Contracts -->
+                <div class="p-space-md rounded-2xl bg-surface-container-low/60 flex flex-col gap-space-2xs transition-colors hover:bg-surface-container-low border border-outline-variant/20">
+                  <div class="flex flex-wrap items-center justify-between gap-space-xs">
+                    <span class="font-headline-sm text-headline-sm text-primary" data-en="Testing & Architectural Contracts" data-vi="Kiểm Thử & Chuẩn Hóa Contract">Testing & Architectural Contracts</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-code-sm text-code-sm flex items-center gap-1 font-medium">
+                      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 
+                      <span data-en="JUnit 5 & OpenAPI 3.1" data-vi="JUnit 5 & OpenAPI 3.1">JUnit 5 & OpenAPI 3.1</span>
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Wrote unit and integration test suites with JUnit 5 & Mockito; documented systems with OpenAPI 3.1 specifications and C4 architecture diagrams for frictionless team handoffs." data-vi="Xây dựng bộ kiểm thử đơn vị và tích hợp với JUnit 5 & Mockito; thiết lập tài liệu kỹ thuật chuẩn OpenAPI 3.1 và mô hình kiến trúc C4 phục vụ bàn giao dự án rõ ràng.">
+                    Wrote unit and integration test suites with JUnit 5 & Mockito; documented systems with OpenAPI 3.1 specifications and C4 architecture diagrams for frictionless team handoffs.
+                  </p>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">JUnit 5</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">Mockito</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">OpenAPI 3.1</span>
+                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-primary font-code-sm text-code-sm">C4 Model</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Tech Pills Footer -->
+            <div class="flex flex-wrap gap-1.5 pt-space-md mt-space-md border-t border-outline-variant/20">
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">Docker</span>
+              <span class="px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed font-code-sm text-code-sm">GitHub Actions</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">Linux CLI</span>
+              <span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-code-sm text-code-sm">JUnit 5</span>
+              <span class="px-2.5 py-1 rounded-full bg-tertiary-fixed/50 text-on-tertiary-fixed font-code-sm text-code-sm">OpenAPI 3.1</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- SECTION 4: INTERACTIVE "ENGINEERING IN ACTION" SNIPPET SHOWCASE -->
+        <section class="w-full mt-space-xl">
+          <div class="rounded-[28px] bg-primary-container text-on-primary p-space-xl lg:p-space-2xl shadow-xl relative overflow-hidden border border-tertiary-container">
+            <!-- Ambient Glow -->
+            <div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-16 -bottom-16 w-96 h-96 rounded-full bg-tertiary-container/40 blur-3xl pointer-events-none"></div>
+
+            <div class="relative flex flex-col gap-space-lg">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+                <div>
+                  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed font-code-sm text-code-sm mb-2">
+                    <span class="material-symbols-outlined text-[14px]">code</span>
+                    <span data-en="Engineering In Action" data-vi="Thực Thi Kỹ Thuật">Engineering In Action</span>
+                  </div>
+                  <h2 class="font-headline-lg text-headline-lg text-on-primary tracking-tight" data-en="Production Architectural Patterns" data-vi="Mẫu Thiết Kế & Cấu Hình Thực Chiến">
+                    Production Architectural Patterns
+                  </h2>
+                </div>
+
+                <!-- Interactive Tab Buttons -->
+                <div class="flex flex-wrap items-center gap-1.5 p-1 bg-tertiary/70 rounded-full border border-surface-container-highest/10">
+                  <button id="tab-btn-1" onclick="switchSnippetTab(1)" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-secondary-container text-on-secondary-fixed font-semibold shadow-sm cursor-pointer">
+                    <span>Request Coalescing</span>
+                  </button>
+                  <button id="tab-btn-2" onclick="switchSnippetTab(2)" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 text-on-primary-container hover:text-on-primary cursor-pointer">
+                    <span>HikariCP & Batch Config</span>
+                  </button>
+                  <button id="tab-btn-3" onclick="switchSnippetTab(3)" class="px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 text-on-primary-container hover:text-on-primary cursor-pointer">
+                    <span>Circuit Breaker Fallback</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Snippet Window Container -->
+              <div class="rounded-2xl bg-tertiary/95 backdrop-blur-md shadow-2xl overflow-hidden font-code-sm text-code-sm border border-tertiary-container/80">
+                <!-- Window Topbar -->
+                <div class="flex items-center justify-between px-4 py-3 bg-tertiary-container/70 border-b border-surface-container-highest/10">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-error/70"></span>
+                    <span class="w-3 h-3 rounded-full bg-secondary-fixed/50"></span>
+                    <span class="w-3 h-3 rounded-full bg-secondary/80"></span>
+                    <span id="snippet-filename" class="ml-2 text-on-tertiary-container text-[11px] font-mono">RequestCoalescingService.java</span>
+                  </div>
+                  <span id="snippet-meta" class="text-on-tertiary-container text-[11px] font-mono">Java 21 • Thread-Safe In-Flight Deduplication</span>
+                </div>
+
+                <!-- Tab 1 Snippet: Request Coalescing -->
+                <div id="snippet-tab-1" class="p-5 text-on-primary font-mono overflow-x-auto leading-relaxed space-y-1 block">
+                  <div><span class="text-secondary-fixed-dim">@Service</span></div>
+                  <div><span class="text-secondary-fixed-dim">@RequiredArgsConstructor</span></div>
+                  <div><span class="text-tertiary-fixed">public class</span> <span class="text-on-primary font-semibold">RequestCoalescingService</span> {</div>
+                  <div class="pl-4 text-on-primary-container">// Map tracking in-flight futures per idempotent key</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">private final</span> <span class="text-on-secondary-container">ConcurrentHashMap</span>&lt;<span class="text-tertiary-fixed">String</span>, <span class="text-on-secondary-container">CompletableFuture</span>&lt;<span class="text-secondary-fixed">ProcessedResult</span>&gt;&gt; <span class="text-on-primary">inFlight</span> = <span class="text-tertiary-fixed">new</span> <span class="text-on-secondary-container">ConcurrentHashMap</span>&lt;&gt;();</div>
+                  <div class="pl-4 mt-2"><span class="text-tertiary-fixed">public</span> <span class="text-on-secondary-container">CompletableFuture</span>&lt;<span class="text-secondary-fixed">ProcessedResult</span>&gt; <span class="text-secondary-fixed">executeCoalesced</span>(<span class="text-tertiary-fixed">String</span> key, <span class="text-on-secondary-container">Payload</span> payload) {</div>
+                  <div class="pl-8"><span class="text-tertiary-fixed">return</span> <span class="text-on-primary">inFlight</span>.<span class="text-secondary-fixed">computeIfAbsent</span>(key, k -&gt; {</div>
+                  <div class="pl-12"><span class="text-tertiary-fixed">return</span> <span class="text-on-secondary-container">CompletableFuture</span>.<span class="text-secondary-fixed">supplyAsync</span>(() -&gt; <span class="text-on-primary">workerRouter</span>.<span class="text-secondary-fixed">evaluate</span>(payload))</div>
+                  <div class="pl-16">.<span class="text-secondary-fixed">whenComplete</span>((res, ex) -&gt; <span class="text-on-primary">inFlight</span>.<span class="text-secondary-fixed">remove</span>(k));</div>
+                  <div class="pl-8">});</div>
+                  <div class="pl-4">}</div>
+                  <div>}</div>
+                </div>
+
+                <!-- Tab 2 Snippet: HikariCP & Batch Config -->
+                <div id="snippet-tab-2" class="p-5 text-on-primary font-mono overflow-x-auto leading-relaxed space-y-1 hidden">
+                  <div class="text-on-primary-container"># Spring Boot 3.x Production Database & HikariCP Pool Optimization</div>
+                  <div><span class="text-tertiary-fixed">spring</span>:</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">datasource</span>:</div>
+                  <div class="pl-8"><span class="text-secondary-fixed-dim">url</span>: <span class="text-secondary-fixed">jdbc:mysql://db-cluster:3306/admission_db?rewriteBatchedStatements=true</span></div>
+                  <div class="pl-8"><span class="text-tertiary-fixed">hikari</span>:</div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">maximum-pool-size</span>: <span class="text-on-secondary-fixed-variant">30</span></div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">minimum-idle</span>: <span class="text-on-secondary-fixed-variant">10</span></div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">connection-timeout</span>: <span class="text-on-secondary-fixed-variant">20000</span> <span class="text-on-primary-container"># 20s budget</span></div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">idle-timeout</span>: <span class="text-on-secondary-fixed-variant">300000</span></div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">max-lifetime</span>: <span class="text-on-secondary-fixed-variant">1200000</span></div>
+                  <div class="pl-12"><span class="text-secondary-fixed-dim">leak-detection-threshold</span>: <span class="text-on-secondary-fixed-variant">4000</span> <span class="text-on-primary-container"># Detect slow leaks</span></div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">jpa</span>:</div>
+                  <div class="pl-8"><span class="text-tertiary-fixed">properties</span>:</div>
+                  <div class="pl-12"><span class="text-tertiary-fixed">hibernate</span>:</div>
+                  <div class="pl-16"><span class="text-secondary-fixed-dim">jdbc.batch_size</span>: <span class="text-on-secondary-fixed-variant">1000</span></div>
+                  <div class="pl-16"><span class="text-secondary-fixed-dim">order_inserts</span>: <span class="text-secondary-fixed">true</span></div>
+                  <div class="pl-16"><span class="text-secondary-fixed-dim">order_updates</span>: <span class="text-secondary-fixed">true</span></div>
+                </div>
+
+                <!-- Tab 3 Snippet: Circuit Breaker Fallback -->
+                <div id="snippet-tab-3" class="p-5 text-on-primary font-mono overflow-x-auto leading-relaxed space-y-1 hidden">
+                  <div class="text-on-primary-container">// Circuit Breaker & Fallback Router (ENGONOW Evaluation Pipeline)</div>
+                  <div><span class="text-secondary-fixed-dim">@CircuitBreaker</span>(name = <span class="text-secondary-fixed-dim">"geminiFlashService"</span>, fallbackMethod = <span class="text-secondary-fixed-dim">"fallbackLocalInference"</span>)</div>
+                  <div><span class="text-secondary-fixed-dim">@Retry</span>(name = <span class="text-secondary-fixed-dim">"geminiFlashService"</span>)</div>
+                  <div><span class="text-tertiary-fixed">public</span> <span class="text-on-secondary-container">EvaluationScore</span> <span class="text-secondary-fixed">evaluateEssayWithGemini</span>(<span class="text-on-secondary-container">EssaySubmission</span> submission) {</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">var</span> response = geminiClient.prompt(CAMBRIDGE_RUBRIC_V2, submission.getText());</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">return</span> jsonParser.extractDeterministicScores(response);</div>
+                  <div>}</div>
+                  <div class="mt-2"><span class="text-tertiary-fixed">private</span> <span class="text-on-secondary-container">EvaluationScore</span> <span class="text-secondary-fixed">fallbackLocalInference</span>(<span class="text-on-secondary-container">EssaySubmission</span> sub, <span class="text-on-secondary-container">CallNotPermittedException</span> ex) {</div>
+                  <div class="pl-4 text-on-primary-container">// Graceful degradation to secondary fast inference model</div>
+                  <div class="pl-4">log.warn(<span class="text-secondary-fixed-dim">"Gemini Circuit Open. Routing to Groq backup cluster for subId: {}"</span>, sub.getId());</div>
+                  <div class="pl-4"><span class="text-tertiary-fixed">return</span> backupAiRouter.evaluate(sub);</div>
+                  <div>}</div>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="px-5 py-2.5 bg-tertiary-container/90 flex items-center justify-between text-[11px] text-on-tertiary-container border-t border-surface-container-highest/10">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                    <span data-en="Production Tested • Clean Architecture Compliant" data-vi="Đã kiểm chứng trong môi trường thực tế • Tuân thủ Clean Architecture">Production Tested • Clean Architecture Compliant</span>
+                  </div>
+                  <span class="font-mono text-secondary-fixed-dim">Zero-Downtime Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- STANDARDIZED FOOTER -->
+  <footer class="w-full mt-space-3xl py-space-2xl bg-surface-container-lowest/70 backdrop-blur-xl shadow-[0_-1px_16px_rgba(28,39,30,0.03)] border-t border-outline-variant/30">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col gap-space-xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-lg pb-space-lg">
+        <div class="max-w-md">
+          <h3 class="font-headline-md text-headline-md text-primary" data-en="Let's build resilient backend systems together" data-vi="Cùng nhau xây dựng những hệ thống Backend vững chắc">
+            Let's build resilient backend systems together
+          </h3>
+          <p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant leading-relaxed" data-en="Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations." data-vi="Sẵn sàng đón nhận cơ hội việc làm Backend Developer / Kỹ sư Phần mềm toàn thời gian và các dự án AI.">
+            Open for full-time Backend Developer / Software Engineer positions, high-throughput systems, and AI integrations.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-sm">
+          <button id="copy-email-btn" onclick="copyEmail()" class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all border border-outline-variant/30" type="button">
+            <span class="material-symbols-outlined text-[16px]">content_copy</span>
+            <span id="copy-email-text" data-en="Copy Email" data-vi="Sao chép Email">Copy Email</span>
+          </button>
+          <a class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-full bg-secondary-container text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-md text-label-md transition-all font-semibold" href="resume.html">
+            <span class="material-symbols-outlined text-[16px]">description</span>
+            <span data-en="View Resume" data-vi="Xem Hồ sơ">View Resume</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/20">
+        <p data-en="© 2026 Cao Thai Bao. All rights reserved." data-vi="© 2026 Cao Thái Bảo. Tất cả quyền được bảo lưu.">
+          © 2026 Cao Thai Bao. All rights reserved.
+        </p>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/BaotheParo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/bao-cao-ab8854252/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="hover:text-primary transition-colors font-label-md text-label-md" href="mailto:tanthaibao123@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE SCRIPT FOR LANGUAGE TOGGLE & SNIPPET TABS -->
+  <script>
+    // Unified Language Toggle Script
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      localStorage.setItem('portfolio_preferred_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Update button UI
+      const btnEn = document.getElementById('lang-btn-en');
+      const btnVi = document.getElementById('lang-btn-vi');
+      if (btnEn && btnVi) {
+        if (lang === 'vi') {
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 bg-secondary-container text-on-secondary-fixed shadow-sm';
+          btnVi.className = 'px-2.5 py-1 rounded-full text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface';
+        }
+      }
+
+      // Update all elements with data-en / data-vi
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+          el.textContent = text;
+        }
+      });
+    }
+
+    // Interactive Snippet Tabs Switcher
+    function switchSnippetTab(tabIndex) {
+      const tabs = [1, 2, 3];
+      const titles = {
+        1: { file: 'RequestCoalescingService.java', meta: 'Java 21 • Thread-Safe In-Flight Deduplication' },
+        2: { file: 'application-production.yml', meta: 'Spring Boot 3.x • HikariCP & Bulk Batching' },
+        3: { file: 'EvaluationFallbackRouter.java', meta: 'Resilience4j • Circuit Breaker & AI Fallback' }
+      };
+
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const content = document.getElementById(`snippet-tab-${t}`);
+        if (t === tabIndex) {
+          btn.className = 'px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-secondary-container text-on-secondary-fixed font-semibold shadow-sm cursor-pointer';
+          content.classList.remove('hidden');
+          content.classList.add('block');
+        } else {
+          btn.className = 'px-3.5 py-1.5 rounded-full font-label-md text-label-md transition-all duration-200 text-on-primary-container hover:text-on-primary cursor-pointer';
+          content.classList.remove('block');
+          content.classList.add('hidden');
+        }
+      });
+
+      const fileEl = document.getElementById('snippet-filename');
+      const metaEl = document.getElementById('snippet-meta');
+      if (fileEl && metaEl && titles[tabIndex]) {
+        fileEl.textContent = titles[tabIndex].file;
+        metaEl.textContent = titles[tabIndex].meta;
+      }
+    }
+
+    // Interactive Copy Email Helper
+    function copyEmail() {
+      const email = 'tanthaibao123@gmail.com';
+      const textSpan = document.getElementById('copy-email-text');
+      const btn = document.getElementById('copy-email-btn');
+      const currentLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+
+      navigator.clipboard.writeText(email).then(() => {
+        if (textSpan) {
+          textSpan.textContent = currentLang === 'vi' ? 'Đã sao chép!' : 'Email Copied!';
+        }
+        if (btn) {
+          btn.classList.add('bg-secondary-container', 'text-on-secondary-fixed');
+        }
+        setTimeout(() => {
+          if (textSpan) {
+            textSpan.textContent = textSpan.getAttribute(`data-${currentLang}`) || (currentLang === 'vi' ? 'Sao chép Email' : 'Copy Email');
+          }
+          if (btn) {
+            btn.classList.remove('bg-secondary-container', 'text-on-secondary-fixed');
+          }
+        }, 2200);
+      }).catch(err => {
+        console.error('Failed to copy email:', err);
+      });
+    }
+
+    // Auto initialize language on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || localStorage.getItem('portfolio_preferred_lang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>
